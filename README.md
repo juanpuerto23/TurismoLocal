@@ -6,4 +6,4 @@ Este proyecto se trata acerca de un programa capaz de hacer reservas en la local
 ## Diagrama de flujo
  
  En este diagrama de flujo se explican las diferentes clases usadas para que el programa se pueda ejecutar de una forma facil.
- ![Diagrama](/Imagenes/Diagrama_Flujo.png)
+ ![Diagrama](/Documentos//Diagrama_Flujo.png)
