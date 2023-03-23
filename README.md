@@ -1,7 +1,6 @@
 # TurismoLocal
 
-Este proyecto se trata acerca de un programa capaz de hacer reservas en la localidad de El Socorro en Santander, Colombia. El lenguaje usado en Java e integrado al patron de arquitectura Modelo-Vista-Controlador (MVC). Tambien he de aclarar el hecho de usar PhPMyAdmin, XAMPP y MySql WorkBench.
-
+Este proyecto se trata acerca de un programa para mejorar el turismo local en la localidad de El Socorro en Santander, Colombia. El lenguaje usado en Java e integrado al patron de arquitectura Modelo-Vista-Controlador (MVC).
 
 ## Diagrama de flujo
  
