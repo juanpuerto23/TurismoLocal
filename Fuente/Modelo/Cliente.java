@@ -3,6 +3,7 @@ public class Cliente
     public int presupuesto;
     public String fechaIngreso;
     public String fechaSalida;
+    // public String gustos[]; Esta verga toca pillarla bien
 
     public Cliente(String pFechaSalida, String pFechaIngreso, int pPresupuesto)
     {
