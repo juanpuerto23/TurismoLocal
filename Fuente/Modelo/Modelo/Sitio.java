@@ -1,3 +1,4 @@
+package Modelo;
 public class Sitio 
 {
     public int numGrupo;

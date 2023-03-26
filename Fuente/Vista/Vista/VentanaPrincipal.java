@@ -1,3 +1,4 @@
+package Vista;
 
 import javax.swing.JFrame;
 
@@ -40,9 +41,9 @@ public class VentanaPrincipal extends JFrame
         
         
         //Caracteristicas de la ventana
-        setTitle("Carro");
-        setSize(400,600);
-        //setLocation(10,10);
+        setTitle("Turismo Local");
+        setSize(1360,700);
+        // setLocation(50,50);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);

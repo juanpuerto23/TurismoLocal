@@ -1,15 +1,18 @@
+package Modelo;
 public class Cliente 
 {
     public int presupuesto;
+    public String gusto;
     public String fechaIngreso;
     public String fechaSalida;
     // public String gustos[]; Esta verga toca pillarla bien
 
-    public Cliente(String pFechaSalida, String pFechaIngreso, int pPresupuesto)
+    public Cliente(String pFechaSalida, String pFechaIngreso, int pPresupuesto, String pGusto)
     {
         this.fechaIngreso = pFechaIngreso;
         this.presupuesto = pPresupuesto;
         this.fechaSalida = pFechaSalida;
+        this.gusto = pGusto;
     }
 
     public int getPresupuesto()
@@ -45,6 +48,16 @@ public class Cliente
     public String toString()
     {
         return "";
+    }
+
+    public String getGusto() 
+    {
+        return gusto;
+    }
+
+    public void setGusto(String gusto) 
+    {
+        this.gusto = gusto;
     }
 
 
