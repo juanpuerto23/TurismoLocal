@@ -1,6 +1,7 @@
 package Vista;
 
 import javax.swing.JFrame;
+import java.awt.*;
 
 public class VentanaPrincipal extends JFrame
 {
@@ -22,12 +23,12 @@ public class VentanaPrincipal extends JFrame
         
         
         //Creación y adición del PanelEntradaDatos
-        /*
+        
         miPanelEntradaDatos = new PanelEntradaDatos();
-        miPanelEntradaDatos.setBounds(10,10,380,190);
+        miPanelEntradaDatos.setBounds(10,10,480,390);
         add(miPanelEntradaDatos);
        
-        
+        /* 
         //Creación y adición del PanelOperaciones
         miPanelOperaciones = new PanelOperaciones();
         miPanelOperaciones.setBounds(10,220,380,60);
@@ -43,6 +44,7 @@ public class VentanaPrincipal extends JFrame
         //Caracteristicas de la ventana
         setTitle("Turismo Local");
         setSize(1360,700);
+        // setBackground(Color.decode("#11d445")); Esto se pone en el panel alskdo
         // setLocation(50,50);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
