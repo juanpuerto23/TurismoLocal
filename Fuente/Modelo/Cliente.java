@@ -1,4 +1,4 @@
-package Modelo;
+
 public class Cliente 
 {
     public int presupuesto;
