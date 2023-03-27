@@ -39,11 +39,15 @@ public class controlador implements ActionListener
                 String fechaEntrada = venPrin.miPanelEntradaDatos.getFechaEntrada();
                 int Presupuesto = Integer.parseInt(venPrin.miPanelEntradaDatos.getPresupuesto());
 
+                model1 = new Cliente(fechaSalida, fechaEntrada, Presupuesto, gusto);
+
                 venPrin.miPanelResultado.mostrarResultado("Se ha creado un nuevo cliente");
                 venPrin.miPanelResultado.mostrarResultado("La fecha en la que llego a Socorro fue " + model1.getFechaEntrada());
                 venPrin.miPanelResultado.mostrarResultado("La fecha en la que se ira de Socorro es " + model1.getFechaSalida());
                 venPrin.miPanelResultado.mostrarResultado("Su presupesto es de $" + model1.getPresupuesto());
                 venPrin.miPanelResultado.mostrarResultado("Sus gustos se basan en " + model1.getGusto());
+
+                venPrin.miPanelOperaciones.desactivarBotonCrear();
             }
             catch(Exception e)
             {

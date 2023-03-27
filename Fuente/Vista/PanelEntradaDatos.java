@@ -31,7 +31,7 @@ public class PanelEntradaDatos extends JPanel
         lbPresupuesto = new JLabel("Cual es tu presupuesto?");
         lbPresupuesto.setBounds(210, -40, 220, 150);
         add(lbPresupuesto);
-        tfPresupuesto = new JTextField("$0");
+        tfPresupuesto = new JTextField("0");
         tfPresupuesto.setBounds(355, 15, 100, 40);
         add(tfPresupuesto);
 
