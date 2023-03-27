@@ -3,13 +3,12 @@ public class Cliente
 {
     public int presupuesto;
     public String gusto;
-    public String fechaIngreso;
+    public String fechaEntrada;
     public String fechaSalida;
-    // public String gustos[]; Esta verga toca pillarla bien
 
-    public Cliente(String pFechaSalida, String pFechaIngreso, int pPresupuesto, String pGusto)
+    public Cliente(String pFechaSalida, String pFechaEntrada, int pPresupuesto, String pGusto)
     {
-        this.fechaIngreso = pFechaIngreso;
+        this.fechaEntrada = pFechaEntrada;
         this.presupuesto = pPresupuesto;
         this.fechaSalida = pFechaSalida;
         this.gusto = pGusto;
@@ -25,14 +24,14 @@ public class Cliente
         this.presupuesto = pPresupuesto;
     }
 
-    public String getFechaIngreso()
+    public String getFechaEntrada()
     {
-        return this.fechaIngreso;
+        return this.fechaEntrada;
     }
 
-    public void setFechaIngreso(String pFechaIngreso)
+    public void setFechaIngreso(String pFechaEntrada)
     {
-        this.fechaIngreso = pFechaIngreso;
+        this.fechaEntrada = pFechaEntrada;
     }
 
     public String getFechaSalida()
