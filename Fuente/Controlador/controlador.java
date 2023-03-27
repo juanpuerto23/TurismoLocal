@@ -1,13 +1,9 @@
-package Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-import Vista.VentanaPrincipal;
-import Modelo.Cliente;
-import Modelo.Grupo;
-import Modelo.Sitio;
+
 
 public class controlador implements ActionListener 
 {

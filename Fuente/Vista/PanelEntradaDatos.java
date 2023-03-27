@@ -1,4 +1,3 @@
-package Vista;
 
 import java.awt.Color;
 import javax.swing.*;
