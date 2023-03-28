@@ -1,4 +1,8 @@
 
-public class PanelLogin {
+import javax.swing.*;
+import java.awt.*;
+
+public class PanelLogin 
+{
     
 }

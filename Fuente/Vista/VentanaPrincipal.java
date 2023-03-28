@@ -10,6 +10,7 @@ public class VentanaPrincipal extends JFrame
     public PanelEntradaDatos miPanelEntradaDatos;
     public PanelOperaciones miPanelOperaciones;
     public PanelResultados miPanelResultado;
+    public PanelTabla miPanelTabla;
     //-------------------------
     //Métodos
     //-------------------------
@@ -22,6 +23,10 @@ public class VentanaPrincipal extends JFrame
         
         
         //Creación y adición del PanelEntradaDatos
+
+        miPanelTabla = new PanelTabla();
+        miPanelTabla.setBounds(500, 0, 840, 505);
+        add(miPanelTabla);
         
         miPanelEntradaDatos = new PanelEntradaDatos();
         miPanelEntradaDatos.setBounds(0, 0, 480, 290);

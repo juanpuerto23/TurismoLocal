@@ -3,6 +3,7 @@
         "Fuente\\Controlador",
         "Fuente\\Ejecutable",
         "Fuente\\Vista",
-        "Fuente\\Modelo"
+        "Fuente\\Modelo",
+        "Fuente\\Imagenes"
     ]
 }

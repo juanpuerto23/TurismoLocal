@@ -10,9 +10,9 @@ public class controlador implements ActionListener
     private VentanaPrincipal venPrin;
     private Cliente model1;
     private Grupo model2;
-    private Sitio model3;
+    private Evento model3;
 
-    public controlador(VentanaPrincipal pVenPrin, Cliente pModel1, Grupo pModel2, Sitio pModel3)
+    public controlador(VentanaPrincipal pVenPrin, Cliente pModel1, Grupo pModel2, Evento pModel3)
     {
         this.venPrin = pVenPrin;
         this.model1 = pModel1;

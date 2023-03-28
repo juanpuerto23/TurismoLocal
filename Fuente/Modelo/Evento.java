@@ -1,5 +1,5 @@
 
-public class Sitio 
+public class Evento 
 {
     public int numGrupo;
     public String nombreSitio;
@@ -8,7 +8,7 @@ public class Sitio
     public int precioComida;
     public String tipoComida;
 
-    public Sitio(int numGrupo, String nombreSitio, String fechaApertura, int numPersonasMax, int precioComida,
+    public Evento(int numGrupo, String nombreSitio, String fechaApertura, int numPersonasMax, int precioComida,
             String tipoComida) 
     {
         this.numGrupo = numGrupo;

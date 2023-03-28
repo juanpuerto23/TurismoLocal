@@ -22,10 +22,12 @@ public class PanelEntradaDatos extends JPanel
         setLayout(null);
         setBackground(Color.decode("#11d445"));
 
-        iImagen = new ImageIcon(getClass().getResource("/Imagenes/Logo.png"));
-        lbImagen = new JLabel(iImagen);
-        lbImagen.setBounds(5, 20, 200, 200);
-        add(lbImagen);
+        //iImagen = new ImageIcon(getClass().getResource("Fuentes/Imagenes/Logo.png"));
+        //lbImagen = new JLabel(iImagen);
+        //lbImagen.setBounds(5, 20, 200, 200);
+        //add(lbImagen);
+
+        // Problema con la imagen (la vdd ni puta idea de lo que)
 
         lbPresupuesto = new JLabel("Cual es tu presupuesto?");
         lbPresupuesto.setBounds(210, -40, 220, 150);
