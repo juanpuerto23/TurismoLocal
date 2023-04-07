@@ -3,28 +3,44 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-
-
 public class controlador implements ActionListener 
 {
     private VentanaPrincipal venPrin;
     private Cliente model1;
     private Grupo model2;
     private Evento model3;
+    private VentanaLogin miVentanaLogin;
+    private Login miLogin;
 
-    public controlador(VentanaPrincipal pVenPrin, Cliente pModel1, Grupo pModel2, Evento pModel3)
+    public controlador(VentanaLogin miVentanaLogin, Login miLogin, Cliente pModel1, Grupo pModel2, Evento pModel3)
     {
-        this.venPrin = pVenPrin;
+        this.miVentanaLogin = miVentanaLogin;
+        this.miLogin = miLogin;
         this.model1 = pModel1;
         this.model2 = pModel2;
         this.model3 = pModel3;
-        this.venPrin.miPanelOperaciones.agregarOyentesBotones(this);
+        this.miVentanaLogin.miPanelLogin.btnAccionLogin.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) 
     {
         String comando = ae.getActionCommand();
+
+        if(comando.equals("accionLogin"))
+        {
+            try 
+            {
+                JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!");
+                VentanaPrincipal miVentanaPrincipal = new VentanaPrincipal();
+                miVentanaPrincipal.setVisible(true);
+            } 
+            catch (Exception e) 
+            {
+                JOptionPane.showMessageDialog(null, "Inicio de sesión fallido!");
+            }
+        }
+
 
         if(comando.equals("crear"))
         {

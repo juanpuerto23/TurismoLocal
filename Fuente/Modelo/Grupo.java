@@ -30,7 +30,5 @@ public class Grupo
     {
         this.tipoActividad = ptipoActividad;
     }
-    
-
 
 }

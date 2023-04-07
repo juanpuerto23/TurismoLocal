@@ -2,8 +2,8 @@ public class Main
 {
     public static void main(String[] args) 
     {
-        VentanaPrincipal miVentana = new VentanaPrincipal();
-        Cliente miCliente = null;
-        controlador miControlador = new controlador(miVentana, miCliente, null, null); 
+        Login miLogin = new Login(null, null);
+        VentanaLogin miVentanaLogin = new VentanaLogin();
+        controlador miControlador = new controlador(miVentanaLogin, miLogin, null, null, null);
     }
 }
