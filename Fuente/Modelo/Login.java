@@ -36,29 +36,40 @@ public class Login
         boolean resultado = false;
         FileReader reader = null;
         BufferedReader bufferedReader = null;
-        try {
-            File archivo = new File("");
+        try 
+        {
+            File archivo = new File("C:\\Users\\57316\\Desktop\\Programación\\Proyecto_POO\\TurismoLocal\\Documentos\\Login.txt");
             reader = new FileReader(archivo);
             bufferedReader = new BufferedReader(reader);
             String linea;
-            while ((linea = bufferedReader.readLine()) != null) {
-                String[] credenciales = linea.split("C:\\Users\\57316\\Desktop\\Programación\\Proyecto_POO\\TurismoLocal\\Documentos\\Login.txt");
-                if (credenciales[0].equals(usuario) && credenciales[1].equals(Contraseña)) {
+            while ((linea = bufferedReader.readLine()) != null) 
+            {
+                String[] credenciales = linea.split(":");
+                if (credenciales[0].equals(usuario) && credenciales[1].equals(Contraseña)) 
+                {
                     resultado = true;
                     break;
                 }
             }
-        } catch (IOException e) {
+        } 
+        catch (IOException e) 
+        {
             e.printStackTrace();
-        } finally {
+        } 
+        finally 
+        {
             try {
-                if (bufferedReader != null) {
+                if (bufferedReader != null) 
+                {
                     bufferedReader.close();
                 }
-                if (reader != null) {
+                if (reader != null) 
+                {
                     reader.close();
                 }
-            } catch (IOException ex) {
+            } 
+            catch (IOException ex) 
+            {
                 ex.printStackTrace();
             }
         }

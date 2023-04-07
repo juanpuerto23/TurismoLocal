@@ -26,4 +26,5 @@ public class VentanaLogin extends JFrame
     {
         miDialogoRegistro = new DialogoRegistro();
     }
+
 }

@@ -32,16 +32,22 @@ public class controlador implements ActionListener
         {
             try 
             {
-                String usuario = miLogin.getUsuario();
-                String Contraseña = miLogin.getContraseña();
-                miLogin.verificarLogin(usuario, Contraseña);
-                JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!");
-                VentanaPrincipal miVentanaPrincipal = new VentanaPrincipal();
-                miVentanaPrincipal.setVisible(true);
+                String pUsuario = miVentanaLogin.miPanelLogin.getUsuarioLogin();
+                String pContraseña = miVentanaLogin.miPanelLogin.getContraseñaLogin();
+                if(miLogin.verificarLogin(pUsuario, pContraseña))
+                {
+                    JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!");
+                    VentanaPrincipal miVentanaPrincipal = new VentanaPrincipal();
+                    miVentanaPrincipal.setVisible(true);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Inicio de sesión fallido", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
             } 
             catch (Exception e) 
             {
-                JOptionPane.showMessageDialog(null, "Inicio de sesión fallido!");
+                JOptionPane.showMessageDialog(null, "ERROR");
             }
         }
 

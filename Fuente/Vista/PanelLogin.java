@@ -7,8 +7,8 @@ public class PanelLogin extends JPanel
     private JLabel lbTituloLogin;
     private JLabel lbUsuarioLogin;
     private JLabel lbContraseñaLogin;
-    private static JTextField tfUsuarioLogin;
-    private static JPasswordField pfContraseñaLogin;
+    private JTextField tfUsuarioLogin;
+    private JTextField pfContraseñaLogin;
     public final JButton btnAccionLogin;
     public JButton btnDialogo;
 
@@ -34,7 +34,7 @@ public class PanelLogin extends JPanel
         tfUsuarioLogin.setForeground(Color.BLACK);
         tfUsuarioLogin.setBounds(390, 190, 200, 30);
 
-        pfContraseñaLogin = new JPasswordField();
+        pfContraseñaLogin = new JTextField();
         pfContraseñaLogin.setFont(new Font("Verdana", Font.PLAIN, 20));
         pfContraseñaLogin.setForeground(Color.BLACK);
         pfContraseñaLogin.setBounds(390, 230, 200, 30);
@@ -66,4 +66,15 @@ public class PanelLogin extends JPanel
     public void agregarOyentesBotones(controlador controlador) 
     {
     }
+
+    public String getUsuarioLogin()
+    {
+        return tfUsuarioLogin.getText();
+    }
+
+    public String getContraseñaLogin()
+    {
+        return pfContraseñaLogin.getText();
+    }
+
 }
