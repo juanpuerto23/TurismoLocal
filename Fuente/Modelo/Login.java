@@ -1,3 +1,5 @@
+import java.io.*;
+
 public class Login 
 {
     public String Usuario;
@@ -29,6 +31,62 @@ public class Login
         Contraseña = contraseña;
     }
 
+    public boolean verificarLogin(String usuario, String Contraseña)
+    {
+        boolean resultado = false;
+        FileReader reader = null;
+        BufferedReader bufferedReader = null;
+        try {
+            File archivo = new File("");
+            reader = new FileReader(archivo);
+            bufferedReader = new BufferedReader(reader);
+            String linea;
+            while ((linea = bufferedReader.readLine()) != null) {
+                String[] credenciales = linea.split("C:\\Users\\57316\\Desktop\\Programación\\Proyecto_POO\\TurismoLocal\\Documentos\\Login.txt");
+                if (credenciales[0].equals(usuario) && credenciales[1].equals(Contraseña)) {
+                    resultado = true;
+                    break;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+        return resultado;
+    }
+
+    public boolean registrarLogin(String usuario, String Contraseña)
+    {
+        boolean resultado = false;
+        FileWriter writer = null;
+        try {
+            File archivo = new File("C:\\Users\\57316\\Desktop\\Programación\\Proyecto_POO\\TurismoLocal\\Documentos\\Login.txt");
+            writer = new FileWriter(archivo, true);
+            writer.write(usuario + ":" + Contraseña + "\n");
+            resultado = true;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+        return resultado;
+    }
 
 
 }

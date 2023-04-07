@@ -10,6 +10,7 @@ public class PanelLogin extends JPanel
     private static JTextField tfUsuarioLogin;
     private static JPasswordField pfContraseñaLogin;
     public final JButton btnAccionLogin;
+    public JButton btnDialogo;
 
     public PanelLogin()
     {
@@ -41,8 +42,14 @@ public class PanelLogin extends JPanel
         btnAccionLogin = new JButton("Iniciar sesión");
         btnAccionLogin.setFont(new Font("Verdana", Font.PLAIN, 20));
         btnAccionLogin.setForeground(Color.BLACK);
-        btnAccionLogin.setBounds(270, 300, 180, 40);
+        btnAccionLogin.setBounds(150, 300, 180, 40);
         btnAccionLogin.setActionCommand("accionLogin");
+
+        btnDialogo = new JButton("Registro");
+        btnDialogo.setFont(new Font("Verdana", Font.PLAIN, 20));
+        btnDialogo.setForeground(Color.BLACK);
+        btnDialogo.setBounds(400, 300, 180, 40);
+        btnDialogo.setActionCommand("crearRegistro");
 
         this.setLayout(null);
         this.setBackground(Color.decode("#8CF739"));
@@ -53,5 +60,10 @@ public class PanelLogin extends JPanel
         this.add(tfUsuarioLogin);
         this.add(pfContraseñaLogin);
         this.add(btnAccionLogin);
+        this.add(btnDialogo);
+    }
+
+    public void agregarOyentesBotones(controlador controlador) 
+    {
     }
 }

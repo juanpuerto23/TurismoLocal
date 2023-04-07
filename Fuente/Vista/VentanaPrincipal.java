@@ -55,11 +55,4 @@ public class VentanaPrincipal extends JFrame
         setVisible(true);
     }
     
-    //Crear ventana dialogo Mover
-    /*
-    public void crearDialogoMover()
-    {
-        miDialogoMoverCarro = new DialogoMoverCarro();
-    }
-    */
 }

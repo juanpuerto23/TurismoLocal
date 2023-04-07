@@ -20,6 +20,7 @@ public class controlador implements ActionListener
         this.model2 = pModel2;
         this.model3 = pModel3;
         this.miVentanaLogin.miPanelLogin.btnAccionLogin.addActionListener(this);
+        this.miVentanaLogin.miPanelLogin.btnDialogo.addActionListener(this);
     }
 
     @Override
@@ -31,6 +32,9 @@ public class controlador implements ActionListener
         {
             try 
             {
+                String usuario = miLogin.getUsuario();
+                String Contraseña = miLogin.getContraseña();
+                miLogin.verificarLogin(usuario, Contraseña);
                 JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!");
                 VentanaPrincipal miVentanaPrincipal = new VentanaPrincipal();
                 miVentanaPrincipal.setVisible(true);
@@ -41,6 +45,21 @@ public class controlador implements ActionListener
             }
         }
 
+        if(comando.equals("crearRegistro"))
+        {
+            
+            miVentanaLogin.crearDialogoRegistro();
+            this.miVentanaLogin.miDialogoRegistro.agregarOyentesBotones(this);
+        }
+
+        if(comando.equals("aceptar"))
+        {
+            String usuario = miVentanaLogin.miDialogoRegistro.getUsuario();
+            String Contraseña = miVentanaLogin.miDialogoRegistro.getContraseña();
+            miLogin.registrarLogin(usuario, Contraseña);
+            JOptionPane.showMessageDialog(null, "Usuario creado exitosamente");
+            miVentanaLogin.miDialogoRegistro.cerrarDialogo();
+        }
 
         if(comando.equals("crear"))
         {
