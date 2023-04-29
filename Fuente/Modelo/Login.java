@@ -38,7 +38,7 @@ public class Login
         BufferedReader bufferedReader = null;
         try 
         {
-            File archivo = new File("C:\\Users\\57316\\Desktop\\Programación\\Proyecto_POO\\TurismoLocal\\Documentos\\Login.txt");
+            File archivo = new File("Login.txt");
             reader = new FileReader(archivo);
             bufferedReader = new BufferedReader(reader);
             String linea;
@@ -81,7 +81,7 @@ public class Login
         boolean resultado = false;
         FileWriter writer = null;
         try {
-            File archivo = new File("C:\\Users\\57316\\Desktop\\Programación\\Proyecto_POO\\TurismoLocal\\Documentos\\Login.txt");
+            File archivo = new File("Login.txt");
             writer = new FileWriter(archivo, true);
             writer.write(usuario + ":" + Contraseña + "\n");
             resultado = true;
