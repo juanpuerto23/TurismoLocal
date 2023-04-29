@@ -38,7 +38,7 @@ public class Login
         BufferedReader bufferedReader = null;
         try 
         {
-            File archivo = new File("C:\\Users\\57316\\Desktop\\Programación\\Proyecto_POO\\TurismoLocal\\Documentos\\Login.txt");
+            File archivo = new File("C:\\Users\\monos\\OneDrive\\Escritorio\\TurismoLocal\\Documentos\\Login.txt");
             reader = new FileReader(archivo);
             bufferedReader = new BufferedReader(reader);
             String linea;
