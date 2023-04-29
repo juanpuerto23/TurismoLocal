@@ -81,7 +81,7 @@ public class Login
         boolean resultado = false;
         FileWriter writer = null;
         try {
-            File archivo = new File("C:\\Users\\57316\\Desktop\\Programación\\Proyecto_POO\\TurismoLocal\\Documentos\\Login.txt");
+            File archivo = new File("C:\\Users\\monos\\OneDrive\\Escritorio\\TurismoLocal\\Documentos\\Login.txt");
             writer = new FileWriter(archivo, true);
             writer.write(usuario + ":" + Contraseña + "\n");
             resultado = true;
