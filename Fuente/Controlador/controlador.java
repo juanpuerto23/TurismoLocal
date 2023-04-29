@@ -27,6 +27,8 @@ public class controlador implements ActionListener
     public void actionPerformed(ActionEvent ae) 
     {
         String comando = ae.getActionCommand();
+        VentanaPrincipal miVentanaPrincipal = new VentanaPrincipal();
+        miVentanaPrincipal.setVisible(false);
 
         if(comando.equals("accionLogin"))
         {
@@ -37,11 +39,11 @@ public class controlador implements ActionListener
                 if(miLogin.verificarLogin(pUsuario, pContraseña))
                 {
                     JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!");
-                    VentanaPrincipal miVentanaPrincipal = new VentanaPrincipal();
                     miVentanaPrincipal.setVisible(true);
                 }
                 else
                 {
+                    miVentanaPrincipal.setVisible(false);
                     JOptionPane.showMessageDialog(null, "Inicio de sesión fallido", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
             } 
