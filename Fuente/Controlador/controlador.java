@@ -77,10 +77,16 @@ public class controlador implements ActionListener
             venPrin.miPanelResultado.mostrarResultado("Se ha creado un nuevo cliente");
             venPrin.miPanelResultado.mostrarResultado("La fecha en la que llego a Socorro fue " + model1.getFechaEntrada());
             venPrin.miPanelResultado.mostrarResultado("La fecha en la que se ira de Socorro es " + model1.getFechaSalida());
-            venPrin.miPanelResultado.mostrarResultado("Su presupesto es de $" + model1.getPresupuesto());
+            venPrin.miPanelResultado.mostrarResultado("Su presupesto es de $" + model1.getPresupuesto() + " pesos.");
             venPrin.miPanelResultado.mostrarResultado("Sus gustos se basan en " + model1.getGusto());
 
-            venPrin.miPanelOperaciones.desactivarBotonCrear();
+            // venPrin.miPanelOperaciones.desactivarBotonCrear();
+        }
+
+        if(comando.equals("borrar"))
+        {
+            miVentanaPrincipal.miPanelEntradaDatos.borrar();
+            miVentanaPrincipal.miPanelResultado.borrar();
         }
 
     }
