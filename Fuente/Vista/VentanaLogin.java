@@ -22,6 +22,11 @@ public class VentanaLogin extends JFrame
         this.add(miPanelLogin);
     }
 
+    public void cerrarLogin()
+    {
+        this.dispose();
+    }
+
     public void crearDialogoRegistro()
     {
         miDialogoRegistro = new DialogoRegistro();

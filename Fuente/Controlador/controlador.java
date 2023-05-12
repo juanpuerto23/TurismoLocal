@@ -5,20 +5,15 @@ import javax.swing.JOptionPane;
 
 public class controlador implements ActionListener 
 {
-    private VentanaPrincipal venPrin;
+    private VentanaPrincipal miVentanaPrincipal;
     private Cliente model1;
-    private Grupo model2;
-    private Evento model3;
     private VentanaLogin miVentanaLogin;
     private Login miLogin;
 
-    public controlador(VentanaLogin miVentanaLogin, Login miLogin, Cliente pModel1, Grupo pModel2, Evento pModel3)
+    public controlador(VentanaLogin miVentanaLogin, Login miLogin)
     {
         this.miVentanaLogin = miVentanaLogin;
         this.miLogin = miLogin;
-        this.model1 = pModel1;
-        this.model2 = pModel2;
-        this.model3 = pModel3;
         this.miVentanaLogin.miPanelLogin.btnAccionLogin.addActionListener(this);
         this.miVentanaLogin.miPanelLogin.btnDialogo.addActionListener(this);
     }
@@ -27,8 +22,6 @@ public class controlador implements ActionListener
     public void actionPerformed(ActionEvent ae) 
     {
         String comando = ae.getActionCommand();
-        VentanaPrincipal miVentanaPrincipal = new VentanaPrincipal();
-        miVentanaPrincipal.setVisible(false);
 
         if(comando.equals("accionLogin"))
         {
@@ -39,11 +32,13 @@ public class controlador implements ActionListener
                 if(miLogin.verificarLogin(pUsuario, pContraseña))
                 {
                     JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!");
+                    this.miVentanaPrincipal = new VentanaPrincipal();
                     miVentanaPrincipal.setVisible(true);
+                    miVentanaPrincipal.miPanelOperaciones.agregarOyentesBotones(this);
+                    miVentanaLogin.cerrarLogin();
                 }
                 else
                 {
-                    miVentanaPrincipal.setVisible(false);
                     JOptionPane.showMessageDialog(null, "Inicio de sesión fallido", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
             } 
@@ -71,28 +66,22 @@ public class controlador implements ActionListener
 
         if(comando.equals("crear"))
         {
-            try
-            {
-                String gusto = venPrin.miPanelEntradaDatos.getGusto();
-                String fechaSalida = venPrin.miPanelEntradaDatos.getFechaSalida();
-                String fechaEntrada = venPrin.miPanelEntradaDatos.getFechaEntrada();
-                int Presupuesto = Integer.parseInt(venPrin.miPanelEntradaDatos.getPresupuesto());
+            VentanaPrincipal venPrin = miVentanaPrincipal;
+            String gusto = venPrin.miPanelEntradaDatos.getGusto();
+            String fechaSalida = venPrin.miPanelEntradaDatos.getFechaSalida();
+            String fechaEntrada = venPrin.miPanelEntradaDatos.getFechaEntrada();
+            int Presupuesto = Integer.parseInt(venPrin.miPanelEntradaDatos.getPresupuesto());
 
-                model1 = new Cliente(fechaSalida, fechaEntrada, Presupuesto, gusto);
+            model1 = new Cliente(fechaSalida, fechaEntrada, Presupuesto, gusto);
 
-                venPrin.miPanelResultado.mostrarResultado("Se ha creado un nuevo cliente");
-                venPrin.miPanelResultado.mostrarResultado("La fecha en la que llego a Socorro fue " + model1.getFechaEntrada());
-                venPrin.miPanelResultado.mostrarResultado("La fecha en la que se ira de Socorro es " + model1.getFechaSalida());
-                venPrin.miPanelResultado.mostrarResultado("Su presupesto es de $" + model1.getPresupuesto());
-                venPrin.miPanelResultado.mostrarResultado("Sus gustos se basan en " + model1.getGusto());
+            venPrin.miPanelResultado.mostrarResultado("Se ha creado un nuevo cliente");
+            venPrin.miPanelResultado.mostrarResultado("La fecha en la que llego a Socorro fue " + model1.getFechaEntrada());
+            venPrin.miPanelResultado.mostrarResultado("La fecha en la que se ira de Socorro es " + model1.getFechaSalida());
+            venPrin.miPanelResultado.mostrarResultado("Su presupesto es de $" + model1.getPresupuesto());
+            venPrin.miPanelResultado.mostrarResultado("Sus gustos se basan en " + model1.getGusto());
 
-                venPrin.miPanelOperaciones.desactivarBotonCrear();
-            }
-            catch(Exception e)
-            {
-                JOptionPane.showMessageDialog(null, "Error en datos de entrada", 
-                "Error", JOptionPane.ERROR_MESSAGE);
-            }
+            venPrin.miPanelOperaciones.desactivarBotonCrear();
         }
+
     }
 }

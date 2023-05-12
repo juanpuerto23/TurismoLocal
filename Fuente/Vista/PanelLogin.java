@@ -1,6 +1,7 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class PanelLogin extends JPanel
 {
@@ -34,7 +35,7 @@ public class PanelLogin extends JPanel
         tfUsuarioLogin.setForeground(Color.BLACK);
         tfUsuarioLogin.setBounds(390, 190, 200, 30);
 
-        pfContraseñaLogin = new JTextField();
+        pfContraseñaLogin = new JPasswordField();
         pfContraseñaLogin.setFont(new Font("Verdana", Font.PLAIN, 20));
         pfContraseñaLogin.setForeground(Color.BLACK);
         pfContraseñaLogin.setBounds(390, 230, 200, 30);
@@ -63,8 +64,10 @@ public class PanelLogin extends JPanel
         this.add(btnDialogo);
     }
 
-    public void agregarOyentesBotones(controlador controlador) 
+    public void agregarOyentesBotones(ActionListener pAL) 
     {
+        btnAccionLogin.addActionListener(pAL);
+        btnDialogo.addActionListener(pAL);
     }
 
     public String getUsuarioLogin()
@@ -76,5 +79,4 @@ public class PanelLogin extends JPanel
     {
         return pfContraseñaLogin.getText();
     }
-
 }

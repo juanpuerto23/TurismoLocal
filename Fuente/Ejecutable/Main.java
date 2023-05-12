@@ -4,6 +4,6 @@ public class Main
     {
         Login miLogin = new Login(null, null);
         VentanaLogin miVentanaLogin = new VentanaLogin();
-        controlador miControlador = new controlador(miVentanaLogin, miLogin, null, null, null);
+        controlador miControlador = new controlador(miVentanaLogin, miLogin);
     }
 }
