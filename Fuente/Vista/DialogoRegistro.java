@@ -18,7 +18,7 @@ public class DialogoRegistro extends JDialog
     {
         setLayout(null);
 
-        lbTitulo = new JLabel("Registro usuario", JLabel.CENTER);
+        lbTitulo = new JLabel("Registro Usuario", JLabel.CENTER);
         lbTitulo.setFont(new Font("Arial", Font.BOLD, 25));
         lbTitulo.setBounds(75,10,280,20);
         add(lbTitulo);

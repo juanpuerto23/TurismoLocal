@@ -80,7 +80,7 @@ public class controlador implements ActionListener
             venPrin.miPanelResultado.mostrarResultado("Su presupesto es de $" + model1.getPresupuesto() + " pesos.");
             venPrin.miPanelResultado.mostrarResultado("Sus gustos se basan en " + model1.getGusto());
 
-            // venPrin.miPanelOperaciones.desactivarBotonCrear();
+            venPrin.miPanelOperaciones.desactivarBotonCrear();
         }
 
         if(comando.equals("borrar"))
