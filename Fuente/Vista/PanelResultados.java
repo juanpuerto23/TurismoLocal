@@ -12,15 +12,15 @@ public class PanelResultados extends JPanel
     public PanelResultados()
     {
         setLayout(null);
-        setBackground(Color.decode("#d6b522"));
+        setBackground(Color.decode("#11d445"));
 
         taResultado = new JTextArea();
         spResultado = new JScrollPane(taResultado);
-        spResultado.setBounds(10, 20, 460, 210);
+        spResultado.setBounds(10, 20, 360, 210);
         add(spResultado);
 
         TitledBorder borde = BorderFactory.createTitledBorder("Datos creados");
-        borde.setTitleColor(Color.BLUE);
+        borde.setTitleColor(Color.decode("#c48b27"));
         setBorder(borde);
     }
 

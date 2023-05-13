@@ -10,7 +10,8 @@ public class VentanaPrincipal extends JFrame
     public PanelEntradaDatos miPanelEntradaDatos;
     public PanelOperaciones miPanelOperaciones;
     public PanelResultados miPanelResultado;
-    public PanelTabla miPanelTabla;
+    public DialogoTabla miDialogoTabla;
+
     //-------------------------
     //Métodos
     //-------------------------
@@ -20,32 +21,26 @@ public class VentanaPrincipal extends JFrame
     {
         //Definición del contenedor de la ventana
         setLayout(null);
-        
-        
-        //Creación y adición del PanelEntradaDatos
-        miPanelTabla = new PanelTabla();
-        miPanelTabla.setBounds(500, 0, 840, 505);
-        this.add(miPanelTabla);
-        
+
         miPanelEntradaDatos = new PanelEntradaDatos();
-        miPanelEntradaDatos.setBounds(0, 0, 480, 290);
+        miPanelEntradaDatos.setBounds(10, 10, 780, 200);
         this.add(miPanelEntradaDatos);
        
 
         //Creación y adición del PanelOperaciones
         miPanelOperaciones = new PanelOperaciones();
-        miPanelOperaciones.setBounds(0,300,480,90);
+        miPanelOperaciones.setBounds(410,240,380,240);
         this.add(miPanelOperaciones);
         
         //Creación y adición del PanelOperaciones
         miPanelResultado = new PanelResultados();
-        miPanelResultado.setBounds(0,390,480,250);
+        miPanelResultado.setBounds(10,240,385,240);
         this.add(miPanelResultado);
         
         
         //Caracteristicas de la ventana
         setTitle("Turismo Local");
-        setSize(1360,700);
+        setSize(820,520);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -55,6 +50,11 @@ public class VentanaPrincipal extends JFrame
     public void cerrarVenPrincipal()
     {
         this.dispose();
+    }
+
+    public void crearDialogoTabla()
+    {
+        miDialogoTabla = new DialogoTabla();
     }
     
 }

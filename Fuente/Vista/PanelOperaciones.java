@@ -11,32 +11,40 @@ public class PanelOperaciones extends JPanel
     public JButton bCrear;
     public JButton bBorrar;
     public JButton bCerrarSesion;
+    public JButton bDialogoTabla;
     
     public PanelOperaciones()
     {
         setLayout(null);
-        setBackground(Color.WHITE);
+        setBackground(Color.decode("#ebd234"));
 
         bCrear = new JButton("Crear");
         bCrear.setFont(new Font("Arial", BOLD, 12));
-        bCrear.setBounds(10, 20, 90, 20);
+        bCrear.setBounds(80, 20, 90, 20);
         add(bCrear);
         bCrear.setActionCommand("crear");
 
         bBorrar = new JButton("Borrar");
         bBorrar.setFont(new Font("Arial", BOLD, 12));
-        bBorrar.setBounds(110, 20, 90, 20);
+        bBorrar.setBounds(80, 100, 90, 20);
         add(bBorrar);
         bBorrar.setActionCommand("borrar");
 
         bCerrarSesion = new JButton("Cerrar Sesion");
         bCerrarSesion.setFont(new Font("Arial", BOLD, 12));
-        bCerrarSesion.setBounds(210, 20, 140, 20);
+        bCerrarSesion.setBounds(210, 100, 140, 20);
         add(bCerrarSesion);
         bCerrarSesion.setActionCommand("cerrarSesion");
 
+        bDialogoTabla = new JButton("Tabla Eventos");
+        bDialogoTabla.setFont(new Font("Arial", BOLD, 12));
+        bDialogoTabla.setBounds(210, 20, 140, 20);
+        add(bDialogoTabla);
+        bDialogoTabla.setActionCommand("dialogoTabla");
+
+
         TitledBorder borde = BorderFactory.createTitledBorder("Botones");
-        borde.setTitleColor(Color.BLUE);
+        borde.setTitleColor(Color.decode("#c48b27"));
         setBorder(borde);
     }
 
@@ -45,10 +53,16 @@ public class PanelOperaciones extends JPanel
         bCrear.addActionListener(pAL);
         bBorrar.addActionListener(pAL);
         bCerrarSesion.addActionListener(pAL);
+        bDialogoTabla.addActionListener(pAL);
     }
 
     public void desactivarBotonCrear()
     {
         bCrear.setEnabled(false);
+    }
+
+    public void activarBotonCrear()
+    {
+        bCrear.setEnabled(true);
     }
 }

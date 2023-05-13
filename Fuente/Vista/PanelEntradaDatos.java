@@ -21,14 +21,7 @@ public class PanelEntradaDatos extends JPanel
     {
         setLayout(null);
         setBackground(Color.decode("#11d445"));
-
-        //iImagen = new ImageIcon(getClass().getResource("Fuentes/Imagenes/Logo.png"));
-        //lbImagen = new JLabel(iImagen);
-        //lbImagen.setBounds(5, 20, 200, 200);
-        //add(lbImagen);
-
-        // Problema con la imagen (la vdd ni puta idea de lo que)
-
+        
         lbPresupuesto = new JLabel("Cual es tu presupuesto?");
         lbPresupuesto.setBounds(210, -40, 220, 150);
         add(lbPresupuesto);
@@ -37,10 +30,10 @@ public class PanelEntradaDatos extends JPanel
         add(tfPresupuesto);
 
         lbGusto = new JLabel("Dime un gusto tuyo");
-        lbGusto.setBounds(210, 10, 220, 150);
+        lbGusto.setBounds(490, -40, 220, 150);
         add(lbGusto);
         tfGusto = new JTextField("Farrear");
-        tfGusto.setBounds(355, 65, 100, 40);
+        tfGusto.setBounds(610, 15, 100, 40);
         add(tfGusto);
 
         lbFechaEntrada = new JLabel("Cuando llegaste? ");
@@ -51,14 +44,14 @@ public class PanelEntradaDatos extends JPanel
         add(tfFechaEntrada);
 
         lbFechaSalida = new JLabel("Cuando te vas? ");
-        lbFechaSalida.setBounds(210, 110, 220, 150);
+        lbFechaSalida.setBounds(490, 60, 220, 150);
         add(lbFechaSalida);
         tfFechaSalida = new JTextField("01/11/2023");
-        tfFechaSalida.setBounds(355, 165, 100, 40);
+        tfFechaSalida.setBounds(610, 115, 100, 40);
         add(tfFechaSalida);
 
         TitledBorder borde = BorderFactory.createTitledBorder("Datos cliente");
-        borde.setTitleColor(Color.WHITE);
+        borde.setTitleColor(Color.decode("#c48b27"));
         setBorder(borde);
     }
 
