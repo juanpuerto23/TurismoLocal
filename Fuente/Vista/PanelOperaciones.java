@@ -10,6 +10,7 @@ public class PanelOperaciones extends JPanel
 {
     public JButton bCrear;
     public JButton bBorrar;
+    public JButton bCerrarSesion;
     
     public PanelOperaciones()
     {
@@ -28,6 +29,12 @@ public class PanelOperaciones extends JPanel
         add(bBorrar);
         bBorrar.setActionCommand("borrar");
 
+        bCerrarSesion = new JButton("Cerrar Sesion");
+        bCerrarSesion.setFont(new Font("Arial", BOLD, 12));
+        bCerrarSesion.setBounds(210, 20, 140, 20);
+        add(bCerrarSesion);
+        bCerrarSesion.setActionCommand("cerrarSesion");
+
         TitledBorder borde = BorderFactory.createTitledBorder("Botones");
         borde.setTitleColor(Color.BLUE);
         setBorder(borde);
@@ -37,6 +44,7 @@ public class PanelOperaciones extends JPanel
     {
         bCrear.addActionListener(pAL);
         bBorrar.addActionListener(pAL);
+        bCerrarSesion.addActionListener(pAL);
     }
 
     public void desactivarBotonCrear()

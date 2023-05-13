@@ -89,5 +89,13 @@ public class controlador implements ActionListener
             miVentanaPrincipal.miPanelResultado.borrar();
         }
 
+        if(comando.equals("cerrarSesion"))
+        {
+            miVentanaPrincipal.cerrarVenPrincipal();
+            VentanaLogin miVentanaLogin = new VentanaLogin();
+            Login miLogin = new Login(null, null);
+            controlador miControlador = new controlador(miVentanaLogin, miLogin);
+        }
+
     }
 }

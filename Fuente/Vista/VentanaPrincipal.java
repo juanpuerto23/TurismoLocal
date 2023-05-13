@@ -51,5 +51,10 @@ public class VentanaPrincipal extends JFrame
         setResizable(false);
         setVisible(true);
     }
+
+    public void cerrarVenPrincipal()
+    {
+        this.dispose();
+    }
     
 }
