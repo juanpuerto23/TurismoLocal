@@ -19,7 +19,7 @@ public class DialogoTabla extends JDialog {
         setLayout(null);
 
         // Agregar 30 filas a la tabla
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 50; i++) {
             Object[] fila = {"Sitio " + i, i * 10, "Evento " + i, new Date(), "Se asistirá"};
             modeloOriginalTabla.addRow(fila);
         }
