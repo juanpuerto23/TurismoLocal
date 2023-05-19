@@ -1,5 +1,5 @@
 
-public class Grupo 
+public class Grupo
 {
     public int numPersonas;
     // public String gustos[];

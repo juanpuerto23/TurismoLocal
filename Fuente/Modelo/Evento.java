@@ -1,5 +1,5 @@
 
-public class Evento 
+public class Evento
 {
     public int numGrupo;
     public String nombreSitio;
