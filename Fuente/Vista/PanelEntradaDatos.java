@@ -51,7 +51,7 @@ public class PanelEntradaDatos extends JPanel
         add(tfFechaSalida);
 
         TitledBorder borde = BorderFactory.createTitledBorder("Datos cliente");
-        borde.setTitleColor(Color.decode("#c48b27"));
+        borde.setTitleColor(Color.decode("#7542f5"));
         setBorder(borde);
     }
 
