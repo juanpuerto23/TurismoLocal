@@ -2,7 +2,7 @@
 import java.awt.Color;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-
+import javax.swing.ImageIcon;
 
 public class PanelEntradaDatos extends JPanel 
 {
@@ -21,6 +21,11 @@ public class PanelEntradaDatos extends JPanel
     {
         setLayout(null);
         setBackground(Color.decode("#11d445"));
+
+        /*iImagen = new ImageIcon(getClass().getResource("/Turismo.png"));
+        lbImagen = new JLabel(iImagen);
+        lbImagen.setBounds(10,10,200,200);
+        add(lbImagen);*/
         
         lbPresupuesto = new JLabel("Cual es tu presupuesto?");
         lbPresupuesto.setBounds(210, -40, 220, 150);
