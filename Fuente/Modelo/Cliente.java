@@ -1,14 +1,13 @@
-
-public class Cliente 
+public class Cliente
 {
     public int presupuesto;
     public String gusto;
-    public String fechaEntrada;
+    public String nombreCliente;
     public String fechaSalida;
 
-    public Cliente(String pFechaSalida, String pFechaEntrada, int pPresupuesto, String pGusto)
+    public Cliente(String pFechaSalida, String pnombreCliente, int pPresupuesto, String pGusto)
     {
-        this.fechaEntrada = pFechaEntrada;
+        this.nombreCliente = pnombreCliente;
         this.presupuesto = pPresupuesto;
         this.fechaSalida = pFechaSalida;
         this.gusto = pGusto;
@@ -24,14 +23,14 @@ public class Cliente
         this.presupuesto = pPresupuesto;
     }
 
-    public String getFechaEntrada()
+    public String getnombreCliente()
     {
-        return this.fechaEntrada;
+        return this.nombreCliente;
     }
 
-    public void setFechaIngreso(String pFechaEntrada)
+    public void setNombreCliente(String pnombreCliente)
     {
-        this.fechaEntrada = pFechaEntrada;
+        this.nombreCliente = pnombreCliente;
     }
 
     public String getFechaSalida()
@@ -46,7 +45,7 @@ public class Cliente
 
     public String toString()
     {
-        return "";
+        return "Nombre del cliente: " + getnombreCliente() + "\nPresupuesto del cliente: " + getPresupuesto() + "\nGustos del cliente: " + getGusto() + "\nFecha a la que se ira el cliente: " + getFechaSalida();
     }
 
     public String getGusto() 

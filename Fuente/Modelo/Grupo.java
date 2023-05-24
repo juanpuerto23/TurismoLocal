@@ -5,20 +5,9 @@ public class Grupo
     // public String gustos[];
     public String tipoActividad;
 
-    public Grupo(int pnumPersonas, String ptipoActividad)
+    public Grupo(String ptipoActividad)
     {
-        this.numPersonas = pnumPersonas;
         this.tipoActividad = ptipoActividad;
-    }
-    
-    public int getnumPersonas()
-    {
-        return this.numPersonas;
-    }
-
-    public void setnumPersonas(int pnumPersonas)
-    {
-        this.numPersonas = pnumPersonas;
     }
 
     public String gettipoActividad()

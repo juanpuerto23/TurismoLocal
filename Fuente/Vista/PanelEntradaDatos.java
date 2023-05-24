@@ -12,8 +12,8 @@ public class PanelEntradaDatos extends JPanel
     private JTextField tfPresupuesto;
     private JLabel lbGusto;
     private JTextField tfGusto;
-    private JLabel lbFechaEntrada;
-    private JTextField tfFechaEntrada;
+    private JLabel lbnombreCliente;
+    private JTextField tfnombreCliente;
     private JLabel lbFechaSalida;
     private JTextField tfFechaSalida;
     
@@ -22,10 +22,10 @@ public class PanelEntradaDatos extends JPanel
         setLayout(null);
         setBackground(Color.decode("#11d445"));
 
-        /*iImagen = new ImageIcon(getClass().getResource("/Turismo.png"));
+        iImagen = new ImageIcon("C:/Users/57316/Desktop/Programación/Proyecto_POO/TurismoLocal/Turismo.png");
         lbImagen = new JLabel(iImagen);
         lbImagen.setBounds(10,10,200,200);
-        add(lbImagen);*/
+        add(lbImagen);
         
         lbPresupuesto = new JLabel("Cual es tu presupuesto?");
         lbPresupuesto.setBounds(210, -40, 220, 150);
@@ -41,12 +41,12 @@ public class PanelEntradaDatos extends JPanel
         tfGusto.setBounds(610, 15, 100, 40);
         add(tfGusto);
 
-        lbFechaEntrada = new JLabel("Cuando llegaste? ");
-        lbFechaEntrada.setBounds(210, 60, 220, 150);
-        add(lbFechaEntrada);
-        tfFechaEntrada = new JTextField("01/01/2023");
-        tfFechaEntrada.setBounds(355, 115, 100, 40);
-        add(tfFechaEntrada);
+        lbnombreCliente = new JLabel("Dime tu nombre");
+        lbnombreCliente.setBounds(210, 60, 220, 150);
+        add(lbnombreCliente);
+        tfnombreCliente = new JTextField("Juanito");
+        tfnombreCliente.setBounds(355, 115, 100, 40);
+        add(tfnombreCliente);
 
         lbFechaSalida = new JLabel("Cuando te vas? ");
         lbFechaSalida.setBounds(490, 60, 220, 150);
@@ -70,9 +70,9 @@ public class PanelEntradaDatos extends JPanel
         return tfFechaSalida.getText();
     }
 
-    public String getFechaEntrada()
+    public String getnombreCliente()
     {
-        return tfFechaEntrada.getText();
+        return tfnombreCliente.getText();
     }
 
     public String getPresupuesto()
@@ -82,7 +82,7 @@ public class PanelEntradaDatos extends JPanel
 
     public void borrar()
     {
-        tfFechaEntrada.setText("");
+        tfnombreCliente.setText("");
         tfFechaSalida.setText("");
         tfPresupuesto.setText("");
         tfGusto.setText("");

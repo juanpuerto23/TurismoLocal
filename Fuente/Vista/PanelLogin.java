@@ -12,9 +12,16 @@ public class PanelLogin extends JPanel
     private JTextField pfContraseñaLogin;
     public final JButton btnAccionLogin;
     public JButton btnDialogo;
+    private ImageIcon iImagen;
+    private JLabel lbImagen;
 
     public PanelLogin()
     {
+        iImagen = new ImageIcon("C:/Users/57316/Desktop/Programación/Proyecto_POO/TurismoLocal/Logo.png");
+        lbImagen = new JLabel(iImagen);
+        lbImagen.setBounds(285,10,150,74);
+        add(lbImagen);
+        
         lbTituloLogin = new JLabel("INICIO DE SESIÓN", SwingConstants.CENTER);
         lbTituloLogin.setFont(new Font("Verdana", Font.BOLD, 20));
         lbTituloLogin.setForeground(Color.BLACK);

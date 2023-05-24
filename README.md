@@ -4,10 +4,10 @@ Este proyecto se trata acerca de un programa para mejorar el turismo local en la
 
 ## Captura de pantalla
 
-## Captura de pantalla Login
+### Captura de pantalla Login
 
 ![Captura Login](/Documentos/captura_login.png)
 
-## Captura de pantalla Ventana Principal
+### Captura de pantalla Ventana Principal
 
 ![Captura Ventana Principal](/Documentos/captura_ventana_principal.png)

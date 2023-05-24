@@ -1,4 +1,3 @@
-
 public class Evento
 {
     public int numGrupo;
@@ -6,8 +5,7 @@ public class Evento
     public String fechaApertura;
     public String tipoEvento;
 
-    public Evento(int numGrupo, String nombreSitio, String fechaApertura,
-            String tipoEvento) 
+    public Evento(int numGrupo, String nombreSitio, String fechaApertura, String tipoEvento) 
     {
         this.numGrupo = numGrupo;
         this.nombreSitio = nombreSitio;
@@ -49,6 +47,6 @@ public class Evento
     }
     public String toString()
     {
-        return "\nNombre sitio: " + getNombreSitio() + "\nTipo evento: " + getTipoEvento() + "\nNumero de personas que asistiran: " + getNumGrupo() + "\nFecha en la que se llevara a cabo el evento: " + getFechaApertura();
+        return "Nombre sitio: " + getNombreSitio() + "\nTipo evento: " + getTipoEvento() + "\nNumero de personas que asistiran: " + getNumGrupo() + "\nFecha en la que se llevara a cabo el evento: " + getFechaApertura();
     }
 }

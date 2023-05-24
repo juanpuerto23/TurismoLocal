@@ -12,6 +12,7 @@ public class PanelOperaciones extends JPanel
     public JButton bBorrar;
     public JButton bCerrarSesion;
     public JButton bDialogoTabla;
+    public JButton bMostrarDatos;
     
     public PanelOperaciones()
     {
@@ -27,14 +28,14 @@ public class PanelOperaciones extends JPanel
 
         bBorrar = new JButton("Borrar");
         bBorrar.setFont(new Font("Arial", BOLD, 12));
-        bBorrar.setBounds(80, 100, 90, 20);
+        bBorrar.setBounds(80, 180, 90, 20);
         bBorrar.setBackground(Color.decode("#eb2e21"));
         add(bBorrar);
         bBorrar.setActionCommand("borrar");
 
         bCerrarSesion = new JButton("Cerrar Sesion");
         bCerrarSesion.setFont(new Font("Arial", BOLD, 12));
-        bCerrarSesion.setBounds(210, 100, 140, 20);
+        bCerrarSesion.setBounds(210, 180, 140, 20);
         bCerrarSesion.setBackground(Color.decode("#eb2e21"));
         add(bCerrarSesion);
         bCerrarSesion.setActionCommand("cerrarSesion");
@@ -45,7 +46,13 @@ public class PanelOperaciones extends JPanel
         bDialogoTabla.setBackground(Color.decode("#21eb5d"));
         add(bDialogoTabla);
         bDialogoTabla.setActionCommand("dialogoTabla");
-
+        
+        bMostrarDatos = new JButton("Mostrar Datos");
+        bMostrarDatos.setFont(new Font("Arial" , BOLD, 12));
+        bMostrarDatos.setBounds(210, 100, 140, 20);
+        bMostrarDatos.setBackground(Color.decode("#e0f542"));
+        bMostrarDatos.setActionCommand("mostrarDatos");
+        add(bMostrarDatos);
 
         TitledBorder borde = BorderFactory.createTitledBorder("Botones");
         borde.setTitleColor(Color.decode("#c48b27"));
@@ -58,6 +65,7 @@ public class PanelOperaciones extends JPanel
         bBorrar.addActionListener(pAL);
         bCerrarSesion.addActionListener(pAL);
         bDialogoTabla.addActionListener(pAL);
+        bMostrarDatos.addActionListener(pAL);
     }
 
     public void desactivarBotonCrear()

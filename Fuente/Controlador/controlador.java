@@ -81,18 +81,26 @@ public class controlador implements ActionListener
             VentanaPrincipal venPrin = miVentanaPrincipal;
             String gusto = venPrin.miPanelEntradaDatos.getGusto();
             String fechaSalida = venPrin.miPanelEntradaDatos.getFechaSalida();
-            String fechaEntrada = venPrin.miPanelEntradaDatos.getFechaEntrada();
+            String nombreCliente = venPrin.miPanelEntradaDatos.getnombreCliente();
             int Presupuesto = Integer.parseInt(venPrin.miPanelEntradaDatos.getPresupuesto());
 
-            model1 = new Cliente(fechaSalida, fechaEntrada, Presupuesto, gusto);
+            model1 = new Cliente(fechaSalida, nombreCliente, Presupuesto, gusto);
 
             venPrin.miPanelResultado.mostrarResultado("Se ha creado un nuevo cliente");
-            venPrin.miPanelResultado.mostrarResultado("La fecha en la que llego a Socorro fue " + model1.getFechaEntrada());
+            venPrin.miPanelResultado.mostrarResultado("Nombre del cliente: " + model1.getnombreCliente());
             venPrin.miPanelResultado.mostrarResultado("La fecha en la que se ira de Socorro es " + model1.getFechaSalida());
             venPrin.miPanelResultado.mostrarResultado("Su presupesto es de $" + model1.getPresupuesto() + " pesos.");
             venPrin.miPanelResultado.mostrarResultado("Sus gustos se basan en " + model1.getGusto());
 
             venPrin.miPanelOperaciones.desactivarBotonCrear();
+        }
+
+        if(comando.equals("mostrarDatos"))
+        {
+            String mensaje1 = model1.toString();
+            miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje1);
+            String mensaje = evento1.toString();
+            miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje);
         }
 
         if(comando.equals("borrar"))
