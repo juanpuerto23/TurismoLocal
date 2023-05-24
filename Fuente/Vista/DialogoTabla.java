@@ -8,11 +8,12 @@ import static java.awt.Font.BOLD;
 public class DialogoTabla extends JDialog 
 {
     private Object[] nombreColumnas = {"Sitio", "Cantidad gente", "Tipo evento", "Fecha"};
-    private Object[] nombreSitio = {"Bohemia Club House", "Kalema Bar", "Tercer Tiempo", "La Arenosa Disco Bar"};
+    private String[] nombreSitio = {"Bohemia Club House", "Kalema Bar", "Tercer Tiempo", "La Arenosa Disco Bar"};
     private Object[] cantidadGente = {"10", "20", "30", "40"};
     private Object[] tipoEvento = {"Restaurante Medieval", "Bar", "Bar", "Discoteca"};
     private Object[] fechaEvento = {"22/02/2024", "22/02/2024", "22/02/2024", "22/02/2024"};
-    public JButton bRegistrarEvento;
+    private JComboBox<String> cbSitioEvento;
+    private JButton bRegistrarEvento;
     private DefaultTableModel modeloOriginalTabla = new DefaultTableModel(nombreColumnas, 0) 
     {
         @Override
@@ -24,7 +25,13 @@ public class DialogoTabla extends JDialog
 
     public DialogoTabla() 
     {
-        setLayout(null);
+
+        cbSitioEvento = new JComboBox<>(nombreSitio);
+        cbSitioEvento.setSelectedIndex(0);
+        cbSitioEvento.setFont(new Font("Arial", Font.PLAIN, 18));
+        cbSitioEvento.setForeground(Color.BLACK);
+        cbSitioEvento.setBounds(300, 520, 190, 30);
+        add(cbSitioEvento);
 
         // Agregar 5 filas a la tabla
         for (int i = 0; i < 4; i++) 
@@ -37,12 +44,12 @@ public class DialogoTabla extends JDialog
         tTablaEstudiantes.getTableHeader().setReorderingAllowed(false);
         tTablaEstudiantes.getTableHeader().setResizingAllowed(false);
 
-        JButton bRegistrarEvento = new JButton("Registrarse");
+        bRegistrarEvento = new JButton("Registrarse");
         bRegistrarEvento.setActionCommand("registrarEvento");
         bRegistrarEvento.setBackground(Color.decode("#21eb5d"));
         bRegistrarEvento.setFont(new Font("Arial", BOLD, 12));
         bRegistrarEvento.setBounds(670, 520, 140, 20);
-        add(bRegistrarEvento);
+        this.add(bRegistrarEvento);
 
 
         // Pasar la tabla como parámetro
@@ -57,12 +64,18 @@ public class DialogoTabla extends JDialog
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
+        setLayout(null);
     }
 
     public void cerrarDialogo() 
     {
         this.dispose();
     }
+
+    public String getTfnombreSitio()
+    {
+        return cbSitioEvento.getSelectedItem().toString();
+    }    
 
     public void agregarOyentesBotones(ActionListener pAL)
     {

@@ -20,7 +20,7 @@ public class PanelResultados extends JPanel
         add(spResultado);
 
         TitledBorder borde = BorderFactory.createTitledBorder("Datos creados");
-        borde.setTitleColor(Color.decode("#7542f5"));
+        borde.setTitleColor(Color.decode("#c48b27"));
         setBorder(borde);
     }
 

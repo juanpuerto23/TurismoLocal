@@ -4,19 +4,15 @@ public class Evento
     public int numGrupo;
     public String nombreSitio;
     public String fechaApertura;
-    public int numPersonasMax;
-    public int precioComida;
-    public String tipoComida;
+    public String tipoEvento;
 
-    public Evento(int numGrupo, String nombreSitio, String fechaApertura, int numPersonasMax, int precioComida,
-            String tipoComida) 
+    public Evento(int numGrupo, String nombreSitio, String fechaApertura,
+            String tipoEvento) 
     {
         this.numGrupo = numGrupo;
         this.nombreSitio = nombreSitio;
         this.fechaApertura = fechaApertura;
-        this.numPersonasMax = numPersonasMax;
-        this.precioComida = precioComida;
-        this.tipoComida = tipoComida;
+        this.tipoEvento = tipoEvento;
     }
 
     public int getNumGrupo() 
@@ -31,19 +27,6 @@ public class Evento
     {
         return fechaApertura;
     }
-    public int getNumPersonasMax() 
-    {
-        return numPersonasMax;
-    }
-    public int getPrecioComida() 
-    {
-        return precioComida;
-    }
-    public String getTipoComida() 
-    {
-        return tipoComida;
-    }
-
     public void setNumGrupo(int numGrupo) 
     {
         this.numGrupo = numGrupo;
@@ -56,18 +39,16 @@ public class Evento
     {
         this.fechaApertura = fechaApertura;
     }
-    public void setNumPersonasMax(int numPersonasMax) 
+    public String getTipoEvento() 
     {
-        this.numPersonasMax = numPersonasMax;
+        return tipoEvento;
     }
-    public void setPrecioComida(int precioComida) 
+    public void setTipoEvento(String tipoEvento) 
     {
-        this.precioComida = precioComida;
+        this.tipoEvento = tipoEvento;
     }
-    public void setTipoComida(String tipoComida) 
+    public String toString()
     {
-        this.tipoComida = tipoComida;
+        return "\nNombre sitio: " + getNombreSitio() + "\nTipo evento: " + getTipoEvento() + "\nNumero de personas que asistiran: " + getNumGrupo() + "\nFecha en la que se llevara a cabo el evento: " + getFechaApertura();
     }
-
-    
 }

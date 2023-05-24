@@ -7,6 +7,7 @@ public class controlador implements ActionListener
 {
     private VentanaPrincipal miVentanaPrincipal;
     private Cliente model1;
+    private Evento evento1;
     private VentanaLogin miVentanaLogin;
     private Login miLogin;
 
@@ -64,6 +65,17 @@ public class controlador implements ActionListener
             miVentanaLogin.miDialogoRegistro.cerrarDialogo();
         }
 
+        if(comando.equals("registrarEvento"))
+        {
+            String nombreSitio = miVentanaPrincipal.miDialogoTabla.getTfnombreSitio();
+            miVentanaPrincipal.miDialogoTabla.cerrarDialogo();
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("Se asistira a: " + nombreSitio);
+            evento1 = new Evento(10, nombreSitio, "23/07/2023", "Farra");
+            String mensaje = evento1.toString();
+            miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje);
+
+        }
+
         if(comando.equals("crear"))
         {
             VentanaPrincipal venPrin = miVentanaPrincipal;
@@ -101,6 +113,7 @@ public class controlador implements ActionListener
         if(comando.equals("dialogoTabla"))
         {
             miVentanaPrincipal.crearDialogoTabla();
+            this.miVentanaPrincipal.miDialogoTabla.agregarOyentesBotones(this);
         }
 
     }

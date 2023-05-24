@@ -56,5 +56,4 @@ public class VentanaPrincipal extends JFrame
     {
         miDialogoTabla = new DialogoTabla();
     }
-    
 }
