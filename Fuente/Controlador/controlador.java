@@ -32,7 +32,7 @@ public class controlador implements ActionListener
                 String pContraseña = miVentanaLogin.miPanelLogin.getContraseñaLogin();
                 if(miLogin.verificarLogin(pUsuario, pContraseña))
                 {
-                    JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!");
+                    JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!", "Inicio de sesion", JOptionPane.INFORMATION_MESSAGE);
                     this.miVentanaPrincipal = new VentanaPrincipal();
                     miVentanaPrincipal.setVisible(true);
                     miVentanaPrincipal.miPanelOperaciones.agregarOyentesBotones(this);
@@ -40,7 +40,7 @@ public class controlador implements ActionListener
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "Inicio de sesión fallido", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Inicio de sesión fallido", "Inicio de sesion", JOptionPane.ERROR_MESSAGE);
                 }
             } 
             catch (Exception e) 
@@ -61,7 +61,7 @@ public class controlador implements ActionListener
             String usuario = miVentanaLogin.miDialogoRegistro.getUsuario();
             String Contraseña = miVentanaLogin.miDialogoRegistro.getContraseña();
             miLogin.registrarLogin(usuario, Contraseña);
-            JOptionPane.showMessageDialog(null, "Usuario creado exitosamente");
+            JOptionPane.showMessageDialog(null, "Usuario creado exitosamente", "Usuario creado", JOptionPane.INFORMATION_MESSAGE);
             miVentanaLogin.miDialogoRegistro.cerrarDialogo();
         }
 
