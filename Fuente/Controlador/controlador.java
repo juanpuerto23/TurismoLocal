@@ -71,11 +71,13 @@ public class controlador implements ActionListener
             miVentanaPrincipal.miPanelResultado.mostrarResultado("----- NUEVO EVENTO -----");
             miVentanaPrincipal.miPanelResultado.mostrarResultado("-----------------------------------\n");
             String nombreSitio = miVentanaPrincipal.miDialogoTabla.getTfnombreSitio();
+            miVentanaPrincipal.miDialogoTabla.obtenerDatos();
             miVentanaPrincipal.miDialogoTabla.cerrarDialogo();
-            miVentanaPrincipal.miPanelResultado.mostrarResultado("Se asistira a: " + nombreSitio);
-            evento1 = new Evento(10, nombreSitio, "23/07/2023", "Farra");
+            evento1 = new Evento(10 + 1, nombreSitio, "23/07/2023", "Farra");
             String mensaje = evento1.toString();
             miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje);
+            Grupo grupo1 = new Grupo("Farra", "Farra", nombreSitio, "12:00 pm");
+            grupo1.calcularGrupos(evento1.getNumGrupo());
 
         }
 

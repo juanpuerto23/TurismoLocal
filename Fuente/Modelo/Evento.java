@@ -47,6 +47,6 @@ public class Evento
     }
     public String toString()
     {
-        return "Nombre sitio: " + getNombreSitio() + "\nTipo evento: " + getTipoEvento() + "\nNumero de personas que asistiran: " + getNumGrupo() + "\nFecha en la que se llevara a cabo el evento: " + getFechaApertura();
+        return "Se asistira a: " + getNombreSitio() + "\nTipo evento: " + getTipoEvento() + "\nNumero de personas que asistiran: " + getNumGrupo() + "\nFecha en la que se llevara a cabo el evento: " + getFechaApertura();
     }
 }

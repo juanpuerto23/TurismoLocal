@@ -7,11 +7,12 @@ import static java.awt.Font.BOLD;
 
 public class DialogoTabla extends JDialog 
 {
-    private Object[] nombreColumnas = {"Sitio", "Cantidad gente", "Tipo evento", "Fecha"};
+    private String[] nombreColumnas = {"Sitio", "Cantidad gente", "Tipo evento", "Fecha"};
     private String[] nombreSitio = {"Bohemia Club House", "Kalema Bar", "Tercer Tiempo", "La Arenosa Disco Bar"};
-    private Object[] cantidadGente = {"10", "20", "30", "40"};
-    private Object[] tipoEvento = {"Restaurante Medieval", "Bar", "Bar", "Discoteca"};
-    private Object[] fechaEvento = {"22/02/2024", "22/02/2024", "22/02/2024", "22/02/2024"};
+    private String[] cantidadGente = {"10", "20", "30", "40"};
+    private String[] tipoEvento = {"Restaurante Medieval", "Bar", "Bar", "Discoteca"};
+    private String[] fechaEvento = {"22/02/2024", "22/02/2024", "22/02/2024", "22/02/2024"};
+    private JTable tTablaEstudiantes;
     private JComboBox<String> cbSitioEvento;
     private JButton bRegistrarEvento;
     private DefaultTableModel modeloOriginalTabla = new DefaultTableModel(nombreColumnas, 0) 
@@ -36,11 +37,11 @@ public class DialogoTabla extends JDialog
         // Agregar 5 filas a la tabla
         for (int i = 0; i < 4; i++) 
         {
-            Object[] fila = {nombreSitio[i], cantidadGente[i], tipoEvento[i], fechaEvento[i]};
+            String[] fila = {nombreSitio[i], cantidadGente[i], tipoEvento[i], fechaEvento[i]};
             modeloOriginalTabla.addRow(fila);
         }
 
-        JTable tTablaEstudiantes = new JTable(modeloOriginalTabla);
+        tTablaEstudiantes = new JTable(modeloOriginalTabla);
         tTablaEstudiantes.getTableHeader().setReorderingAllowed(false);
         tTablaEstudiantes.getTableHeader().setResizingAllowed(false);
 
@@ -63,8 +64,41 @@ public class DialogoTabla extends JDialog
         setSize(860,600);
         setLocationRelativeTo(null);
         setResizable(false);
-        setVisible(true);
         setLayout(null);
+        setVisible(true);
+    }
+
+    public String[] getNombreSitio() 
+    {
+        return nombreSitio;
+    }
+    public void setNombreSitio(String[] nombreSitio) 
+    {
+        this.nombreSitio = nombreSitio;
+    }
+    public String[] getCantidadGente() 
+    {
+        return cantidadGente;
+    }
+    public void setCantidadGente(String[] cantidadGente) 
+    {
+        this.cantidadGente = cantidadGente;
+    }
+    public String[] getTipoEvento() 
+    {
+        return tipoEvento;
+    }
+    public void setTipoEvento(String[] tipoEvento) 
+    {
+        this.tipoEvento = tipoEvento;
+    }
+    public String[] getFechaEvento() 
+    {
+        return fechaEvento;
+    }
+    public void setFechaEvento(String[] fechaEvento) 
+    {
+        this.fechaEvento = fechaEvento;
     }
 
     public void cerrarDialogo() 
@@ -75,8 +109,8 @@ public class DialogoTabla extends JDialog
     public String getTfnombreSitio()
     {
         return cbSitioEvento.getSelectedItem().toString();
-    }    
-
+    }
+    
     public void agregarOyentesBotones(ActionListener pAL)
     {
         bRegistrarEvento.addActionListener(pAL);
@@ -86,4 +120,42 @@ public class DialogoTabla extends JDialog
     {
         bRegistrarEvento.setEnabled(false);
     }
+
+    public void obtenerDatos()
+    {
+        String sitioBuscado = getTfnombreSitio();
+        int filaEncontrada = -1;
+
+        for(int i = 0; i < modeloOriginalTabla.getRowCount(); i++)
+        {
+            String sitio = modeloOriginalTabla.getValueAt(i, 0).toString();
+            if (sitio.equals(sitioBuscado)) 
+            {
+                filaEncontrada = i;
+                break; // Terminar el bucle si se encuentra la fila
+            }
+        }
+
+        if (filaEncontrada != -1) 
+        {
+            // Se encontró la fila
+            String[] fila = new String[4];
+            for (int j = 0; j < 4; j++) 
+            {
+                fila[j] = modeloOriginalTabla.getValueAt(filaEncontrada, j).toString();
+            }
+
+            System.out.println("Fila encontrada:");
+            System.out.println("Sitio: " + fila[0]);
+            System.out.println("Cantidad gente: " + fila[1]);
+            System.out.println("Tipo evento: " + fila[2]);
+            System.out.println("Fecha: " + fila[3]);
+        } 
+        else 
+        {
+            // No se encontró la fila
+            System.out.println("No se encontró ninguna fila con el sitio buscado.");
+        }
+    }
 }
+
