@@ -1,8 +1,10 @@
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class DialogoRegistro extends JDialog
@@ -20,27 +22,27 @@ public class DialogoRegistro extends JDialog
 
         lbTitulo = new JLabel("Registro Usuario", JLabel.CENTER);
         lbTitulo.setFont(new Font("Arial", Font.BOLD, 25));
-        lbTitulo.setBounds(75,10,280,20);
+        lbTitulo.setBounds(60,10,280,30);
         add(lbTitulo);
 
-        lbUsuario = new JLabel("Usuario = ", JLabel.RIGHT);
+        lbUsuario = new JLabel("Usuario = ", JLabel.CENTER);
         lbUsuario.setFont(new Font("Arial", Font.BOLD, 25));
-        lbUsuario.setBounds(10,50,200,20);
+        lbUsuario.setBounds(10,70,200,20);
         add(lbUsuario);
 
-        lbContraseña = new JLabel("Contraseña = ", JLabel.RIGHT);
+        lbContraseña = new JLabel("Contraseña = ", JLabel.CENTER);
         lbContraseña.setFont(new Font("Arial", Font.BOLD, 25));
-        lbContraseña.setBounds(10,150,200,20);
+        lbContraseña.setBounds(10,170,200,20);
         add(lbContraseña);
 
         txUsuario= new JTextField();
-        txUsuario.setFont(new Font("Arial", Font.BOLD, 25));
-        txUsuario.setBounds(250,50,100,25);
+        txUsuario.setFont(new Font("Arial", Font.BOLD, 15));
+        txUsuario.setBounds(250,70,100,25);
         add(txUsuario);
         
         txContraseña= new JTextField();
-        txContraseña.setFont(new Font("Arial", Font.BOLD, 25));
-        txContraseña.setBounds(250,150,100,25);
+        txContraseña.setFont(new Font("Arial", Font.BOLD, 15));
+        txContraseña.setBounds(250,170,100,25);
         add(txContraseña);
 
         btAceptar = new JButton("Aceptar");
@@ -49,11 +51,14 @@ public class DialogoRegistro extends JDialog
         btAceptar.setActionCommand("aceptar");
         add(btAceptar);
 
-        setTitle("Registro");
+        setTitle("Crear Usuario y Contraseña");
         setSize(400,400);
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
+
+        JPanel contentPane = (JPanel) getContentPane();
+        contentPane.setBackground(Color.decode("#9DB2BF"));
     }
 
     public String getUsuario() 
