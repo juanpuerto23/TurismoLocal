@@ -60,7 +60,7 @@ public class PanelLogin extends JPanel
         btnDialogo.setActionCommand("crearRegistro");
 
         this.setLayout(null);
-        this.setBackground(Color.decode("#8CF739"));
+        this.setBackground(Color.decode("#9DB2BF"));
         this.setVisible(true);
         this.add(lbTituloLogin);
         this.add(lbUsuarioLogin);

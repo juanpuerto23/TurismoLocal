@@ -67,6 +67,9 @@ public class controlador implements ActionListener
 
         if(comando.equals("registrarEvento"))
         {
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("\n-----------------------------------");
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("----- NUEVO EVENTO -----");
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("-----------------------------------\n");
             String nombreSitio = miVentanaPrincipal.miDialogoTabla.getTfnombreSitio();
             miVentanaPrincipal.miDialogoTabla.cerrarDialogo();
             miVentanaPrincipal.miPanelResultado.mostrarResultado("Se asistira a: " + nombreSitio);
@@ -78,6 +81,9 @@ public class controlador implements ActionListener
 
         if(comando.equals("crear"))
         {
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("\n-------------------------------------");
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("----- NUEVO CLIENTE -----");
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("-------------------------------------\n");
             VentanaPrincipal venPrin = miVentanaPrincipal;
             String gusto = venPrin.miPanelEntradaDatos.getGusto();
             String fechaSalida = venPrin.miPanelEntradaDatos.getFechaSalida();
@@ -97,10 +103,29 @@ public class controlador implements ActionListener
 
         if(comando.equals("mostrarDatos"))
         {
-            String mensaje1 = model1.toString();
-            miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje1);
-            String mensaje = evento1.toString();
-            miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje);
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("\n-------------------------------------");
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("----- MOSTRAR DATOS -----");
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("-------------------------------------\n");
+            if(model1 == null)
+            {
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("No se ha creado ningun cliente");
+            }
+            if(evento1 == null)
+            {
+                if(model1 != null)
+                {
+                    String mensaje1 = model1.toString();
+                    miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje1);
+                }
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("No se ha inscrito a ningun evento");
+            }
+            else
+            {
+                String mensaje1 = model1.toString();
+                miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje1);
+                String mensaje = evento1.toString();
+                miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje);
+            }
         }
 
         if(comando.equals("borrar"))

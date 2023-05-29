@@ -1,9 +1,9 @@
 public class Evento
 {
-    public int numGrupo;
-    public String nombreSitio;
-    public String fechaApertura;
-    public String tipoEvento;
+    private int numGrupo;
+    private String nombreSitio;
+    private String fechaApertura;
+    private String tipoEvento;
 
     public Evento(int numGrupo, String nombreSitio, String fechaApertura, String tipoEvento) 
     {

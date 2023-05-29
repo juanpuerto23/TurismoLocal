@@ -2,8 +2,8 @@ import java.io.*;
 
 public class Login 
 {
-    public String Usuario;
-    public String Contraseña;
+    private String Usuario;
+    private String Contraseña;
 
     public Login(String pUsuario, String pConstraseña)
     {
@@ -98,6 +98,4 @@ public class Login
         }
         return resultado;
     }
-
-
 }

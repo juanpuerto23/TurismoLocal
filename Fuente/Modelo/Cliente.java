@@ -1,9 +1,9 @@
 public class Cliente
 {
-    public int presupuesto;
-    public String gusto;
-    public String nombreCliente;
-    public String fechaSalida;
+    private int presupuesto;
+    private String gusto;
+    private String nombreCliente;
+    private String fechaSalida;
 
     public Cliente(String pFechaSalida, String pnombreCliente, int pPresupuesto, String pGusto)
     {

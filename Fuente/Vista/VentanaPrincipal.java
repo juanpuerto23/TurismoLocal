@@ -45,6 +45,7 @@ public class VentanaPrincipal extends JFrame
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
+        this.getContentPane().setBackground(Color.decode("#483838"));
     }
 
     public void cerrarVenPrincipal()

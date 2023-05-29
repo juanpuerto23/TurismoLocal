@@ -1,9 +1,9 @@
 
 public class Grupo
 {
-    public int numPersonas;
+    private int numPersonas;
     // public String gustos[];
-    public String tipoActividad;
+    private String tipoActividad;
 
     public Grupo(String ptipoActividad)
     {
