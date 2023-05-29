@@ -60,5 +60,11 @@ public class Grupo extends Evento
     public void calcularGrupos(int numPersonas)
     {
         int posicionGrupo;
+        for(int i = 0; i < numPersonas; i ++)
+        {
+            setNumGrupo(i);
+            posicionGrupo = (int)(Math.random() * i) + 1;
+            
+        }
     }
 }

@@ -16,7 +16,6 @@ public class PanelEntradaDatos extends JPanel
     private JTextField tfnombreCliente;
     private JLabel lbFechaSalida;
     private JTextField tfFechaSalida;
-    private JComboBox jcgustos;
     
     public PanelEntradaDatos() 
     {
@@ -31,13 +30,12 @@ public class PanelEntradaDatos extends JPanel
         lbPresupuesto = new JLabel("Cual es tu presupuesto?");
         lbPresupuesto.setBounds(210, 60, 220, 150);
         add(lbPresupuesto);
-        
-        jbgustos = new JComboBox();
-        jbgustos.setBounds(355, 115, 100, 40);
-        jbgustos.setBackground(Color.decode("#90B77D"));
-        add(jbgustos);
+        tfPresupuesto = new JTextField("0");
+        tfPresupuesto.setBounds(355, 115, 100, 40);
+        tfPresupuesto.setBackground(Color.decode("#90B77D"));
+        add(tfPresupuesto);
 
-        lbGusto = new JLabel("selecciona un gusto tuyo");
+        lbGusto = new JLabel("Dime un gusto tuyo");
         lbGusto.setBounds(490, -40, 220, 150);
         add(lbGusto);
         tfGusto = new JTextField("Turistear");
