@@ -64,23 +64,7 @@ public class controlador implements ActionListener
             JOptionPane.showMessageDialog(null, "Usuario creado exitosamente", "Usuario creado", JOptionPane.INFORMATION_MESSAGE);
             miVentanaLogin.miDialogoRegistro.cerrarDialogo();
         }
-
-        if(comando.equals("registrarEvento"))
-        {
-            miVentanaPrincipal.miPanelResultado.mostrarResultado("\n-----------------------------------");
-            miVentanaPrincipal.miPanelResultado.mostrarResultado("----- NUEVO EVENTO -----");
-            miVentanaPrincipal.miPanelResultado.mostrarResultado("-----------------------------------\n");
-            String nombreSitio = miVentanaPrincipal.miDialogoTabla.getTfnombreSitio();
-            miVentanaPrincipal.miDialogoTabla.obtenerDatos();
-            miVentanaPrincipal.miDialogoTabla.cerrarDialogo();
-            evento1 = new Evento(10 + 1, nombreSitio, "23/07/2023", "Farra");
-            String mensaje = evento1.toString();
-            miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje);
-            Grupo grupo1 = new Grupo("Farra", "Farra", nombreSitio, "12:00 pm");
-            grupo1.calcularGrupos(evento1.getNumGrupo());
-
-        }
-
+ 
         if(comando.equals("crear"))
         {
             miVentanaPrincipal.miPanelResultado.mostrarResultado("\n-------------------------------------");
@@ -101,6 +85,35 @@ public class controlador implements ActionListener
             venPrin.miPanelResultado.mostrarResultado("Sus gustos se basan en " + model1.getGusto());
 
             venPrin.miPanelOperaciones.desactivarBotonCrear();
+        }
+
+        if(comando.equals("registrarEvento"))
+        {
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("\n-----------------------------------");
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("----- NUEVO EVENTO -----");
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("-----------------------------------\n");
+            if(model1.getGusto() == "Farrear")
+            {
+                String nombreSitio = miVentanaPrincipal.miDialogoTabla.getTfnombreSitio();
+                miVentanaPrincipal.miDialogoTabla.obtenerDatos();
+                miVentanaPrincipal.miDialogoTabla.cerrarDialogo();
+                evento1 = new Evento(10 + 1, nombreSitio, "23/07/2023", "Farra");
+                String mensaje = evento1.toString();
+                miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje);
+                Grupo grupo1 = new Grupo("Farra", "Farra", nombreSitio, "12:00 pm");
+                grupo1.calcularGrupos(evento1.getNumGrupo());
+            }
+            if(model1.getGusto() == "Comer")
+            {
+                String nombreSitio = miVentanaPrincipal.miDialogoTablaRestaurante.getTfnombreSitio();
+                miVentanaPrincipal.miDialogoTablaRestaurante.cerrarDialogo();
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Piensas ir a " + nombreSitio + "? Genial!");
+                if(model1.getPresupuesto() < 50000)
+                {
+                    miVentanaPrincipal.miPanelResultado.mostrarResultado("El presupuesto es menor a $50000.\n Si vas acompañado te sugerimos llevar mas dinero");
+                }
+            }
+
         }
 
         if(comando.equals("mostrarDatos"))
@@ -149,8 +162,17 @@ public class controlador implements ActionListener
 
         if(comando.equals("dialogoTabla"))
         {
-            miVentanaPrincipal.crearDialogoTabla();
-            this.miVentanaPrincipal.miDialogoTabla.agregarOyentesBotones(this);
+            if(model1.getGusto() == "Farrear")
+            {
+                miVentanaPrincipal.crearDialogoTabla();
+                this.miVentanaPrincipal.miDialogoTabla.agregarOyentesBotones(this);
+            }
+            if(model1.getGusto() == "Comer")
+            {
+                miVentanaPrincipal.crearDialogoTablaRestaurante();
+                this.miVentanaPrincipal.miDialogoTablaRestaurante.agregarOyentesBotones(this);
+            }
+
         }
 
     }
