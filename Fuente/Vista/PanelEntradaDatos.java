@@ -11,7 +11,7 @@ public class PanelEntradaDatos extends JPanel
     private JLabel lbPresupuesto;
     private JTextField tfPresupuesto;
     private JLabel lbGusto;
-    private JTextField tfGusto;
+    private JComboBox<String> cbGusto;
     private JLabel lbnombreCliente;
     private JTextField tfnombreCliente;
     private JLabel lbFechaSalida;
@@ -35,13 +35,15 @@ public class PanelEntradaDatos extends JPanel
         tfPresupuesto.setBackground(Color.decode("#90B77D"));
         add(tfPresupuesto);
 
-        lbGusto = new JLabel("Dime un gusto tuyo");
+        String[] gustosPredeterminados = {"Farrear", "Turistear", "Comer", "Explorar"};
+        lbGusto = new JLabel("Selecciona una accion");
         lbGusto.setBounds(490, -40, 220, 150);
         add(lbGusto);
-        tfGusto = new JTextField("Turistear");
-        tfGusto.setBounds(610, 15, 100, 40);
-        tfGusto.setBackground(Color.decode("#90B77D"));
-        add(tfGusto);
+        cbGusto = new JComboBox<>(gustosPredeterminados);
+        cbGusto.setSelectedIndex(0);
+        cbGusto.setBounds(630, 15, 100, 40);
+        cbGusto.setBackground(Color.decode("#90B77D"));
+        add(cbGusto);
 
         lbnombreCliente = new JLabel("Dime tu nombre");
         lbnombreCliente.setBounds(210, -40, 220, 150); 
@@ -55,7 +57,7 @@ public class PanelEntradaDatos extends JPanel
         lbFechaSalida.setBounds(490, 60, 220, 150);
         add(lbFechaSalida);
         tfFechaSalida = new JTextField("01/11/2023");
-        tfFechaSalida.setBounds(610, 115, 100, 40);
+        tfFechaSalida.setBounds(630, 115, 100, 40);
         tfFechaSalida.setBackground(Color.decode("#90B77D"));
         add(tfFechaSalida);
 
@@ -63,7 +65,7 @@ public class PanelEntradaDatos extends JPanel
 
     public String getGusto() 
     {
-        return tfGusto.getText();
+        return cbGusto.getSelectedItem().toString();
     }
 
     public String getFechaSalida()
@@ -86,6 +88,5 @@ public class PanelEntradaDatos extends JPanel
         tfnombreCliente.setText("");
         tfFechaSalida.setText("");
         tfPresupuesto.setText("");
-        tfGusto.setText("");
     }
 }

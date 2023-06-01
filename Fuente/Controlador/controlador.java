@@ -132,6 +132,7 @@ public class controlador implements ActionListener
 
         if(comando.equals("borrar"))
         {
+            JOptionPane.showMessageDialog(null, "Se borraran los datos", "Borrar datos", JOptionPane.CANCEL_OPTION);
             miVentanaPrincipal.miPanelEntradaDatos.borrar();
             miVentanaPrincipal.miPanelResultado.borrar();
             miVentanaPrincipal.miPanelOperaciones.activarBotonCrear();
@@ -139,6 +140,7 @@ public class controlador implements ActionListener
 
         if(comando.equals("cerrarSesion"))
         {
+            JOptionPane.showMessageDialog(null, "Se cerrara la sesion", "Cerrar Sesion", JOptionPane.CANCEL_OPTION);
             miVentanaPrincipal.cerrarVenPrincipal();
             VentanaLogin miVentanaLogin = new VentanaLogin();
             Login miLogin = new Login(null, null);
