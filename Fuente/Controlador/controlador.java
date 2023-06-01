@@ -89,31 +89,45 @@ public class controlador implements ActionListener
 
         if(comando.equals("registrarEvento"))
         {
-            miVentanaPrincipal.miPanelResultado.mostrarResultado("\n-----------------------------------");
-            miVentanaPrincipal.miPanelResultado.mostrarResultado("----- NUEVO EVENTO -----");
-            miVentanaPrincipal.miPanelResultado.mostrarResultado("-----------------------------------\n");
             if(model1.getGusto() == "Farrear")
             {
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("\n-----------------------------------");
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("----- NUEVO EVENTO -----");
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("-----------------------------------\n");
                 String nombreSitio = miVentanaPrincipal.miDialogoTabla.getTfnombreSitio();
                 miVentanaPrincipal.miDialogoTabla.obtenerDatos();
                 miVentanaPrincipal.miDialogoTabla.cerrarDialogo();
-                evento1 = new Evento(10 + 1, nombreSitio, "23/07/2023", "Farra");
                 String mensaje = evento1.toString();
                 miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje);
                 Grupo grupo1 = new Grupo("Farra", "Farra", nombreSitio, "12:00 pm");
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("No se recomienda conducir en estado de ebriedad, tenlo en cuenta!");
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Ten cuidado sobre lo que te ofrecen en la farra");
                 grupo1.calcularGrupos(evento1.getNumGrupo());
             }
             if(model1.getGusto() == "Comer")
             {
+                
                 String nombreSitio = miVentanaPrincipal.miDialogoTablaRestaurante.getTfnombreSitio();
                 miVentanaPrincipal.miDialogoTablaRestaurante.cerrarDialogo();
-                miVentanaPrincipal.miPanelResultado.mostrarResultado("Piensas ir a " + nombreSitio + "? Genial!");
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("\nPiensas ir a " + nombreSitio + "? Genial!");
+                miVentanaPrincipal.miDialogoTablaRestaurante.obtenerDatos();
                 if(model1.getPresupuesto() < 50000)
                 {
-                    miVentanaPrincipal.miPanelResultado.mostrarResultado("El presupuesto es menor a $50000.\n Si vas acompañado te sugerimos llevar mas dinero");
+                    miVentanaPrincipal.miPanelResultado.mostrarResultado("El presupuesto es menor a $50000.\nSi vas acompañado te sugerimos llevar mas dinero");
                 }
             }
-
+            if(model1.getGusto() == "Explorar")
+            {
+                String nombreSitio = miVentanaPrincipal.miDialogoTablaExploracion.getTfnombreSitio();
+                miVentanaPrincipal.miDialogoTablaExploracion.cerrarDialogo();
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Quieres ir a " + nombreSitio + "? Genial!");
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Si vas a una piscina, no olvides aplicarte bloqueador!");
+                miVentanaPrincipal.miDialogoTablaExploracion.obtenerDatos();
+            }
+            if(model1.getGusto() == "Turistear")
+            {
+                
+            }
         }
 
         if(comando.equals("mostrarDatos"))
@@ -171,6 +185,11 @@ public class controlador implements ActionListener
             {
                 miVentanaPrincipal.crearDialogoTablaRestaurante();
                 this.miVentanaPrincipal.miDialogoTablaRestaurante.agregarOyentesBotones(this);
+            }
+            if(model1.getGusto() == "Explorar")
+            {
+                miVentanaPrincipal.crearDialogoTablaExploracion();
+                this.miVentanaPrincipal.miDialogoTablaExploracion.agregarOyentesBotones(this);
             }
 
         }

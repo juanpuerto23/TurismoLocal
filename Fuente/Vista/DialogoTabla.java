@@ -145,11 +145,7 @@ public class DialogoTabla extends JDialog
                 fila[j] = modeloOriginalTabla.getValueAt(filaEncontrada, j).toString();
             }
 
-            System.out.println("Fila encontrada:");
-            System.out.println("Sitio: " + fila[0]);
-            System.out.println("Cantidad gente: " + fila[1]);
-            System.out.println("Tipo evento: " + fila[2]);
-            System.out.println("Fecha: " + fila[3]);
+            JOptionPane.showMessageDialog(null,"Nombre Sitio: " + fila[0] + "\nCantidad gente: " + fila[1] + "\nTipo sitio: " + fila[2] + "\nFecha: " + fila[3], "Datos Evento", JOptionPane.INFORMATION_MESSAGE);
         } 
         else 
         {

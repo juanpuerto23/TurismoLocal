@@ -7,11 +7,11 @@ import static java.awt.Font.BOLD;
 
 public class DialogoTablaRestaurante extends JDialog
 {
-    private String[] nombreColumnas = {"Sitio", "Aforo Maximo", "Tipo Restaurante", "Hora de apertura"};
-    private String[] nombreSitio = {"Bohemia Club House", "El Horno de la Tia", "Callejeros", "El tablon", "Donde Peter"};
-    private String[] cantidadGente = {"10", "30", "40", "30", "20"};
-    private String[] tipoEvento = {"Restaurante Medieval", "Restaurante tipico", "Comidas Rapidas", "Comidas Rapidas", "Comidas Rapidas"};
-    private String[] fechaEvento = {"22/02/2024", "22/02/2024", "22/02/2024", "22/02/2024", "7:00 pm - 12:00 am"};
+    private String[] nombreColumnas = {"Sitio", "Aforo Maximo", "Tipo Restaurante", "Horario"};
+    private String[] nombreSitio = {"Bohemia Club House", "El Horno de la Tia", "Callejeros", "El tablon", "Donde Peter", "Burger Project", "Tacos y Cuates"};
+    private String[] cantidadGente = {"10", "30", "40", "30", "20", "45", "20"};
+    private String[] tipoEvento = {"Restaurante Medieval", "Restaurante Tipico", "Comidas Rapidas", "Comidas Rapidas", "Comidas Rapidas", "Comidas Rapidas", "Restaurante Mexicano"};
+    private String[] fechaEvento = {"8:00 pm - 11:00 pm", "11:00 am - 3:00 pm", "2:00 pm - 10:00 pm", "5:00 pm - 10:00 pm", "7:00 pm - 1:00 am", "5:00 pm - 10:30 pm", "6:00 pm - 11:00 pm"};
     private JTable tTablaEstudiantes;
     private JComboBox<String> cbSitioEvento;
     private JButton bRegistrarEvento;
@@ -35,7 +35,7 @@ public class DialogoTablaRestaurante extends JDialog
         add(cbSitioEvento);
 
         // Agregar 5 filas a la tabla
-        for (int i = 0; i < 5; i++) 
+        for (int i = 0; i < 7; i++) 
         {
             String[] fila = {nombreSitio[i], cantidadGente[i], tipoEvento[i], fechaEvento[i]};
             modeloOriginalTabla.addRow(fila);
@@ -145,11 +145,7 @@ public class DialogoTablaRestaurante extends JDialog
                 fila[j] = modeloOriginalTabla.getValueAt(filaEncontrada, j).toString();
             }
 
-            System.out.println("Fila encontrada:");
-            System.out.println("Sitio: " + fila[0]);
-            System.out.println("Cantidad gente: " + fila[1]);
-            System.out.println("Tipo evento: " + fila[2]);
-            System.out.println("Fecha: " + fila[3]);
+            JOptionPane.showMessageDialog(null,"Nombre restaurante: " + fila[0] + "\nAforo maximo: " + fila[1] + " personas" + "\nTipo restaurante: " + fila[2] + "\nHorario: " + fila[3], "Datos Restaurante", JOptionPane.INFORMATION_MESSAGE);
         } 
         else 
         {
