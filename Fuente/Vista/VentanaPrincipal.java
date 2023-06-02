@@ -13,6 +13,7 @@ public class VentanaPrincipal extends JFrame
     public DialogoTabla miDialogoTabla;
     public DialogoTablaRestaurante miDialogoTablaRestaurante;
     public DialogoTablaExploracion miDialogoTablaExploracion;
+    public DialogoTablaTurismo miDialogoTablaTurismo;
 
     //-------------------------
     //Métodos
@@ -68,5 +69,10 @@ public class VentanaPrincipal extends JFrame
     public void crearDialogoTablaExploracion()
     {
         miDialogoTablaExploracion = new DialogoTablaExploracion();
+    }
+
+    public void crearDialogoTablaTurismo()
+    {
+        miDialogoTablaTurismo = new DialogoTablaTurismo();
     }
 }

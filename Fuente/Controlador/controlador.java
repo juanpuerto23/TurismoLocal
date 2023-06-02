@@ -159,7 +159,7 @@ public class controlador implements ActionListener
 
         if(comando.equals("borrar"))
         {
-            JOptionPane.showMessageDialog(null, "Se borraran los datos", "Borrar datos", JOptionPane.CANCEL_OPTION);
+            JOptionPane.showMessageDialog(null, "Se borrarán los datos.", "Borrar datos", JOptionPane.CANCEL_OPTION);
             miVentanaPrincipal.miPanelEntradaDatos.borrar();
             miVentanaPrincipal.miPanelResultado.borrar();
             miVentanaPrincipal.miPanelOperaciones.activarBotonCrear();
@@ -167,7 +167,7 @@ public class controlador implements ActionListener
 
         if(comando.equals("cerrarSesion"))
         {
-            JOptionPane.showMessageDialog(null, "Se cerrara la sesion", "Cerrar Sesion", JOptionPane.CANCEL_OPTION);
+            JOptionPane.showMessageDialog(null, "Se cerrará la sesión.", "Cerrar Sesion", JOptionPane.CANCEL_OPTION);
             miVentanaPrincipal.cerrarVenPrincipal();
             VentanaLogin miVentanaLogin = new VentanaLogin();
             Login miLogin = new Login(null, null);
@@ -190,6 +190,11 @@ public class controlador implements ActionListener
             {
                 miVentanaPrincipal.crearDialogoTablaExploracion();
                 this.miVentanaPrincipal.miDialogoTablaExploracion.agregarOyentesBotones(this);
+            }
+            if(model1.getGusto() == "Turistear")
+            {
+                miVentanaPrincipal.crearDialogoTablaTurismo();
+                this.miVentanaPrincipal.miDialogoTablaTurismo.agregarOyentesBotones(this);
             }
 
         }

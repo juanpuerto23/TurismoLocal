@@ -13,6 +13,7 @@ public class PanelOperaciones extends JPanel
     public JButton bCerrarSesion;
     public JButton bDialogoTabla;
     public JButton bMostrarDatos;
+    public JButton bMostrarConsejo;
     
     public PanelOperaciones()
     {
@@ -21,17 +22,24 @@ public class PanelOperaciones extends JPanel
 
         bCrear = new JButton("Crear");
         bCrear.setFont(new Font("Arial", BOLD, 12));
-        bCrear.setBounds(80, 20, 90, 20);
+        bCrear.setBounds(50, 20, 140, 20);
         bCrear.setBackground(Color.decode("#D2D79F"));
         add(bCrear);
         bCrear.setActionCommand("crear");
 
         bBorrar = new JButton("Borrar");
         bBorrar.setFont(new Font("Arial", BOLD, 12));
-        bBorrar.setBounds(80, 180, 90, 20);
+        bBorrar.setBounds(50, 180, 140, 20);
         bBorrar.setBackground(Color.decode("#D2D79F"));
         add(bBorrar);
         bBorrar.setActionCommand("borrar");
+
+        bMostrarConsejo = new JButton("Mostrar Consejo");
+        bMostrarConsejo.setFont(new Font("Arial", BOLD, 12));
+        bMostrarConsejo.setBounds(50, 100, 140, 20);
+        bMostrarConsejo.setBackground(Color.decode("#D2D79F"));
+        add(bMostrarConsejo);
+        bMostrarConsejo.setActionCommand("mostrarConsejo");
 
         bCerrarSesion = new JButton("Cerrar Sesion");
         bCerrarSesion.setFont(new Font("Arial", BOLD, 12));
@@ -63,6 +71,7 @@ public class PanelOperaciones extends JPanel
         bCerrarSesion.addActionListener(pAL);
         bDialogoTabla.addActionListener(pAL);
         bMostrarDatos.addActionListener(pAL);
+        bMostrarConsejo.addActionListener(pAL);
     }
 
     public void desactivarBotonCrear()

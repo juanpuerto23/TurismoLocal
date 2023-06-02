@@ -20,7 +20,7 @@ public class DialogoTablaTurismo extends JDialog
         @Override
         public boolean isCellEditable(int row, int col) 
         {
-            return col == 3;
+            return col == 4;
         }
     };
 
