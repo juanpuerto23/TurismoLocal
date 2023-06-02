@@ -1,3 +1,7 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+
 public class Cliente
 {
     private int presupuesto;
@@ -56,6 +60,15 @@ public class Cliente
     public void setGusto(String gusto) 
     {
         this.gusto = gusto;
+    }
+
+    public int calcularDiasRestantes() 
+    {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate fechaSalida = LocalDate.parse(this.fechaSalida, formatter);
+        LocalDate fechaActual = LocalDate.now();
+        long diasRestantes = ChronoUnit.DAYS.between(fechaActual, fechaSalida);
+        return (int) diasRestantes;
     }
 
 

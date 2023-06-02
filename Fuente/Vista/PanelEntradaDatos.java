@@ -56,7 +56,7 @@ public class PanelEntradaDatos extends JPanel
         lbFechaSalida = new JLabel("Cuando te vas? ");
         lbFechaSalida.setBounds(490, 60, 220, 150);
         add(lbFechaSalida);
-        tfFechaSalida = new JTextField("01/11/2023");
+        tfFechaSalida = new JTextField("01-11-2023");
         tfFechaSalida.setBounds(630, 115, 100, 40);
         tfFechaSalida.setBackground(Color.decode("#90B77D"));
         add(tfFechaSalida);

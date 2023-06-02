@@ -85,6 +85,7 @@ public class controlador implements ActionListener
             venPrin.miPanelResultado.mostrarResultado("Sus gustos se basan en " + model1.getGusto());
 
             venPrin.miPanelOperaciones.desactivarBotonCrear();
+            venPrin.miPanelOperaciones.activarBotonMostrarConsejo();
         }
 
         if(comando.equals("registrarEvento"))
@@ -97,6 +98,7 @@ public class controlador implements ActionListener
                 String nombreSitio = miVentanaPrincipal.miDialogoTabla.getTfnombreSitio();
                 miVentanaPrincipal.miDialogoTabla.obtenerDatos();
                 miVentanaPrincipal.miDialogoTabla.cerrarDialogo();
+                evento1 = new Evento(40, nombreSitio, "10/06/2023", "Farra");
                 String mensaje = evento1.toString();
                 miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje);
                 Grupo grupo1 = new Grupo("Farra", "Farra", nombreSitio, "12:00 pm");
@@ -126,7 +128,51 @@ public class controlador implements ActionListener
             }
             if(model1.getGusto() == "Turistear")
             {
-                
+                String nombreSitio = miVentanaPrincipal.miDialogoTablaTurismo.getTfnombreSitio();
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Quieres ir a " + nombreSitio + "? Excelente!");
+                miVentanaPrincipal.miDialogoTablaTurismo.cerrarDialogo();
+                miVentanaPrincipal.miDialogoTablaTurismo.obtenerDatos();
+            }
+        }
+
+        if(comando.equals("mostrarConsejo"))
+        {
+            miVentanaPrincipal.miPanelResultado.mostrarResultado("\nHola, " + model1.getnombreCliente() +"!.\nAqui algunos consejos: ");
+            int diasRestantes = model1.calcularDiasRestantes();
+            if(diasRestantes <= 2)
+            {
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Te vas en " + diasRestantes + " dias. Alista tu maleta!.");
+            }
+            else
+            {
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Te vas en " + diasRestantes + " dias.");
+            }
+            if(model1.getPresupuesto() >= 1000000)
+            {
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Tienes $" + model1.getPresupuesto() + " pesos.");
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("En cualquier caso, existe una estacion de policia en el Parque de la Independencia.");
+            }
+            if(model1.getPresupuesto() <= 50000)
+            {
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Tienes $" + model1.getPresupuesto() + " pesos.");
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Si piensas hacer un retiro grande recuerda hacerlo en un corresponsal autorizado.\nEstos corresponsales quedan en el Parque de la Independencia.");
+            }
+            if(model1.getGusto() == "Turistear")
+            {
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Te gusta " + model1.getGusto());
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Recuerda que si quieres turistear en El Socorro existe un punto de informacion en frente de la Iglesia ubicada en el Parque de la Independencia.");
+            }
+            if(model1.getGusto() == "Comer" && model1.getPresupuesto() <= 50000)
+            {
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Te gusta " + model1.getGusto());
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Tienes $" + model1.getPresupuesto() + " pesos.");
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Si vas a comer acompañado se te sugiere llevar mas dinero.");
+            }
+            if(model1.getGusto() == "Farrear")
+            {
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Te gusta " + model1.getGusto());
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Recuerda no conducir en estado de ebriedad!.");
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("Se te sugiere ir acompañado de tus amigos o del grupo seleccionado para ti.");
             }
         }
 
@@ -139,21 +185,21 @@ public class controlador implements ActionListener
             {
                 miVentanaPrincipal.miPanelResultado.mostrarResultado("No se ha creado ningun cliente");
             }
-            if(evento1 == null)
-            {
-                if(model1 != null)
-                {
-                    String mensaje1 = model1.toString();
-                    miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje1);
-                }
-                miVentanaPrincipal.miPanelResultado.mostrarResultado("No se ha inscrito a ningun evento");
-            }
-            else
+            else if(evento1 != null)
             {
                 String mensaje1 = model1.toString();
                 miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje1);
                 String mensaje = evento1.toString();
                 miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje);
+            }
+            else if(evento1 == null)
+            {
+                miVentanaPrincipal.miPanelResultado.mostrarResultado("No se ha inscrito a ningun evento");
+                if(model1 != null)
+                {
+                    String mensaje1 = model1.toString();
+                    miVentanaPrincipal.miPanelResultado.mostrarResultado(mensaje1);
+                }
             }
         }
 
@@ -162,6 +208,7 @@ public class controlador implements ActionListener
             JOptionPane.showMessageDialog(null, "Se borrarán los datos.", "Borrar datos", JOptionPane.CANCEL_OPTION);
             miVentanaPrincipal.miPanelEntradaDatos.borrar();
             miVentanaPrincipal.miPanelResultado.borrar();
+            miVentanaPrincipal.miPanelOperaciones.desactivarBotonMostrarConsejo();
             miVentanaPrincipal.miPanelOperaciones.activarBotonCrear();
         }
 

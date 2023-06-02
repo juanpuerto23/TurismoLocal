@@ -8,10 +8,10 @@ import static java.awt.Font.BOLD;
 public class DialogoTabla extends JDialog 
 {
     private String[] nombreColumnas = {"Sitio", "Cantidad gente", "Tipo evento", "Fecha"};
-    private String[] nombreSitio = {"Bohemia Club House", "Kalema Bar", "Tercer Tiempo", "La Arenosa Disco Bar"};
-    private String[] cantidadGente = {"10", "20", "30", "40"};
-    private String[] tipoEvento = {"Restaurante Medieval", "Bar", "Bar", "Discoteca"};
-    private String[] fechaEvento = {"22/02/2024", "22/02/2024", "22/02/2024", "22/02/2024"};
+    private String[] nombreSitio = {"Berbeo", "Kalema", "Tercer Tiempo", "La Arenosa Disco Bar", "Imperio", "El Sotano"};
+    private String[] cantidadGente = {"40", "30", "20", "40", "40", "30"};
+    private String[] tipoEvento = {"Discoteca", "Bar", "Bar", "Discoteca", "Discoteca bar", "Bar cuestionable"};
+    private String[] fechaEvento = {"10/06/2024", "10/06/2024", "10/06/2024", "10/06/2024", "10/06/2023", "9/06/2023"};
     private JTable tTablaEstudiantes;
     private JComboBox<String> cbSitioEvento;
     private JButton bRegistrarEvento;
@@ -35,7 +35,7 @@ public class DialogoTabla extends JDialog
         add(cbSitioEvento);
 
         // Agregar 5 filas a la tabla
-        for (int i = 0; i < 4; i++) 
+        for (int i = 0; i < 6; i++) 
         {
             String[] fila = {nombreSitio[i], cantidadGente[i], tipoEvento[i], fechaEvento[i]};
             modeloOriginalTabla.addRow(fila);

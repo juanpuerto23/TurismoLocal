@@ -7,11 +7,11 @@ import static java.awt.Font.BOLD;
 
 public class DialogoTablaTurismo extends JDialog 
 {
-    private String[] nombreColumnas = {"Sitio", "Cantidad gente", "Tipo evento", "Fecha"};
-    private String[] nombreSitio = {"Bohemia Club House", "Kalema Bar", "Tercer Tiempo", "La Arenosa Disco Bar"};
-    private String[] cantidadGente = {"10", "20", "30", "40"};
-    private String[] tipoEvento = {"Restaurante Medieval", "Bar", "Bar", "Discoteca"};
-    private String[] fechaEvento = {"22/02/2024", "22/02/2024", "22/02/2024", "22/02/2024"};
+    private String[] nombreColumnas = {"Sitio", "Grupo Personas", "Tipo sitio", "Distancia en carro (minutos)"};
+    private String[] nombreSitio = {"Basilica Nuestra Señora del Socorro","Cascadas de Juan Curi","Cueva del indio","Balneario Monas","Casa de la cultura Horacio Plata","Parque Convento","Parque de la independencia","Casa de Berbeo","Quinta Fominaya","Hacienda Majavita","La casa logia","Salto de la luz","Villa olímpica","Palmas del Socorro","Paramo"};
+    private String[] cantidadGente = {"40","10","20","10","10","Indefinido","Indefinido","10","10","10","10","10","10","Indefinido","Indefinido"};
+    private String[] tipoEvento = {"Iglesia","Parque Ecológico","Parque Ecológico","Parque Ecológico","Sitio Interés","Sitio Interés","Sitio Interés","Sitio Interés","Sitio Interés","Sitio Interés","Sitio Interés","Sitio Interés","Sitio Interés","Pueblo","Pueblo"};
+    private String[] fechaEvento = {"1", "12", "6","28", "14", "3", "25", "7", "20", "11", "29", "18", "4", "26", "9"};
     private JTable tTablaEstudiantes;
     private JComboBox<String> cbSitioEvento;
     private JButton bRegistrarEvento;
@@ -35,7 +35,7 @@ public class DialogoTablaTurismo extends JDialog
         add(cbSitioEvento);
 
         // Agregar 5 filas a la tabla
-        for (int i = 0; i < 4; i++) 
+        for (int i = 0; i < 15; i++) 
         {
             String[] fila = {nombreSitio[i], cantidadGente[i], tipoEvento[i], fechaEvento[i]};
             modeloOriginalTabla.addRow(fila);
@@ -145,7 +145,7 @@ public class DialogoTablaTurismo extends JDialog
                 fila[j] = modeloOriginalTabla.getValueAt(filaEncontrada, j).toString();
             }
 
-            JOptionPane.showMessageDialog(null,"Nombre Sitio: " + fila[0] + "\nCantidad gente: " + fila[1] + "\nTipo sitio: " + fila[2] + "\nFecha: " + fila[3], "Datos Evento", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Nombre Sitio: " + fila[0] + "\nCantidad gente: " + fila[1] + "\nTipo sitio: " + fila[2] + "\nGrupo de personas: " + fila[3], "Datos Evento", JOptionPane.INFORMATION_MESSAGE);
         } 
         else 
         {

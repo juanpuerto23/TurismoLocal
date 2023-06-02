@@ -38,6 +38,7 @@ public class PanelOperaciones extends JPanel
         bMostrarConsejo.setFont(new Font("Arial", BOLD, 12));
         bMostrarConsejo.setBounds(50, 100, 140, 20);
         bMostrarConsejo.setBackground(Color.decode("#D2D79F"));
+        bMostrarConsejo.setEnabled(false);
         add(bMostrarConsejo);
         bMostrarConsejo.setActionCommand("mostrarConsejo");
 
@@ -77,6 +78,16 @@ public class PanelOperaciones extends JPanel
     public void desactivarBotonCrear()
     {
         bCrear.setEnabled(false);
+    }
+
+    public void desactivarBotonMostrarConsejo()
+    {
+        bMostrarConsejo.setEnabled(false);
+    }
+
+    public void activarBotonMostrarConsejo()
+    {
+        bMostrarConsejo.setEnabled(true);
     }
 
     public void activarBotonCrear()
