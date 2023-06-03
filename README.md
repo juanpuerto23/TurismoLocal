@@ -15,9 +15,9 @@ git clone https://github.com/juanpuerto23/TurismoLocal.git
 cd TurismoLocal/
 ```
 
-A continuación, te mostramos como hacer uso del proyecto desde la terminal:
-
 ## Uso del proyecto
+
+A continuación, te mostramos como hacer uso del proyecto desde la terminal:
 
 ```bash
 cd Fuentes/
