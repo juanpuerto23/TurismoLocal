@@ -20,7 +20,7 @@ cd TurismoLocal/
 A continuación, te mostramos como hacer uso del proyecto desde la terminal:
 
 ```bash
-cd Fuentes/
+cd Fuente/
 java Ejecutable.Main
 ```
 
