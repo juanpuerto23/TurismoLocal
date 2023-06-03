@@ -145,7 +145,7 @@ public class DialogoTablaTurismo extends JDialog
                 fila[j] = modeloOriginalTabla.getValueAt(filaEncontrada, j).toString();
             }
 
-            JOptionPane.showMessageDialog(null,"Nombre Sitio: " + fila[0] + "\nCantidad gente: " + fila[1] + "\nTipo sitio: " + fila[2] + "\nGrupo de personas: " + fila[3], "Datos Evento", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Nombre Sitio: " + fila[0] + "\nCantidad gente: " + fila[1] + "\nTipo sitio: " + fila[2] + "\nDistancia en carro (minutos): " + fila[3], "Datos Evento", JOptionPane.INFORMATION_MESSAGE);
         } 
         else 
         {
