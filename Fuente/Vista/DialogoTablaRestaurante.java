@@ -44,10 +44,12 @@ public class DialogoTablaRestaurante extends JDialog
         tTablaEstudiantes = new JTable(modeloOriginalTabla);
         tTablaEstudiantes.getTableHeader().setReorderingAllowed(false);
         tTablaEstudiantes.getTableHeader().setResizingAllowed(false);
+        tTablaEstudiantes.setBackground(Color.decode("#339359"));
+        tTablaEstudiantes.setRowHeight(40);
 
         bRegistrarEvento = new JButton("Registrarse");
         bRegistrarEvento.setActionCommand("registrarEvento");
-        bRegistrarEvento.setBackground(Color.decode("#21eb5d"));
+        bRegistrarEvento.setBackground(Color.decode("#D2D79F"));
         bRegistrarEvento.setFont(new Font("Arial", BOLD, 12));
         bRegistrarEvento.setBounds(670, 520, 140, 20);
         this.add(bRegistrarEvento);
@@ -57,7 +59,6 @@ public class DialogoTablaRestaurante extends JDialog
         JScrollPane spTablaEstudiantes = new JScrollPane();
         spTablaEstudiantes.setViewportView(tTablaEstudiantes);
         spTablaEstudiantes.setBounds(10, 15, 820, 480);
-
         this.add(spTablaEstudiantes);
 
         setTitle("Registro Eventos");
@@ -66,6 +67,7 @@ public class DialogoTablaRestaurante extends JDialog
         setResizable(false);
         setLayout(null);
         setVisible(true);
+        getContentPane().setBackground(Color.decode("#483838"));
     }
 
     public String[] getNombreSitio() 
