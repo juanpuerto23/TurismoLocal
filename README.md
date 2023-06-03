@@ -2,7 +2,7 @@
 
 Este proyecto se trata acerca de un programa para mejorar el turismo local en la localidad de El Socorro en Santander, Colombia. El lenguaje usado en Java e integrado al patron de arquitectura Modelo-Vista-Controlador (MVC).
 
-![GitHub](https://img.shields.io/github/license/juanpuerto23/TurismoLocal)
+[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
 ![GitHub](https://img.shields.io/github/commit-activity/m/juanpuerto23/TurismoLocal)
 
 
