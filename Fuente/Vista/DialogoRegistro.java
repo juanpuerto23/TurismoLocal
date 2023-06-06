@@ -27,7 +27,7 @@ public class DialogoRegistro extends JDialog
 
         lbUsuario = new JLabel("Usuario = ", JLabel.CENTER);
         lbUsuario.setFont(new Font("Arial", Font.BOLD, 25));
-        lbUsuario.setBounds(10,70,200,20);
+        lbUsuario.setBounds(30,70,200,20);
         add(lbUsuario);
 
         lbContraseña = new JLabel("Contraseña = ", JLabel.CENTER);
@@ -37,17 +37,17 @@ public class DialogoRegistro extends JDialog
 
         txUsuario= new JTextField();
         txUsuario.setFont(new Font("Arial", Font.BOLD, 15));
-        txUsuario.setBounds(250,70,100,25);
+        txUsuario.setBounds(200,70,100,25);
         add(txUsuario);
         
         txContraseña= new JTextField();
         txContraseña.setFont(new Font("Arial", Font.BOLD, 15));
-        txContraseña.setBounds(250,170,100,25);
+        txContraseña.setBounds(200,170,100,25);
         add(txContraseña);
 
         btAceptar = new JButton("Aceptar");
         btAceptar.setFont(new Font("Arial", Font.BOLD, 25));
-        btAceptar.setBounds(75,300,260,25);
+        btAceptar.setBounds(60,250,260,25);
         btAceptar.setActionCommand("aceptar");
         add(btAceptar);
 
