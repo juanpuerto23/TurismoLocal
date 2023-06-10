@@ -8,7 +8,7 @@ Este proyecto se trata acerca de un programa para mejorar el turismo local en la
 
 ## Configuración del proyecto
 
-A continuación, te mostramos como clonar el proyecto desde este repositorio, no se necesitar ningun programa externo aunque se te recomienda usar Visual Studio Code y Git Bash:
+A continuación, te mostramos como clonar el proyecto desde este repositorio, no se necesitar ningun programa externo aunque se te recomienda usar Visual Studio Code y tu terminal de confianza:
 
 ```bash
 git clone https://github.com/juanpuerto23/TurismoLocal.git
