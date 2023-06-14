@@ -98,4 +98,50 @@ public class Login
         }
         return resultado;
     }
+
+    
+    public boolean verificarExistenciaUsuario(String usuario)
+    {
+        boolean existe = false;
+        FileReader reader = null;
+        BufferedReader bufferedReader = null;
+        try 
+        {
+            File archivo = new File("Login.txt");
+            reader = new FileReader(archivo);
+            bufferedReader = new BufferedReader(reader);
+            String linea;
+            while ((linea = bufferedReader.readLine()) != null) 
+            {
+                String[] credenciales = linea.split(":");
+                if (credenciales[0].equals(usuario)) 
+                {
+                    existe = true;
+                    break;
+                }
+            }
+        } 
+        catch (IOException e) 
+        {
+            e.printStackTrace();
+        } 
+        finally 
+        {
+            try {
+                if (bufferedReader != null) 
+                {
+                    bufferedReader.close();
+                }
+                if (reader != null) 
+                {
+                    reader.close();
+                }
+            } 
+            catch (IOException ex) 
+            {
+                ex.printStackTrace();
+            }
+        }
+        return existe;
+    }
 }

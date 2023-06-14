@@ -51,7 +51,6 @@ public class controlador implements ActionListener
 
         if(comando.equals("crearRegistro"))
         {
-            
             miVentanaLogin.crearDialogoRegistro();
             this.miVentanaLogin.miDialogoRegistro.agregarOyentesBotones(this);
         }
@@ -60,9 +59,17 @@ public class controlador implements ActionListener
         {
             String usuario = miVentanaLogin.miDialogoRegistro.getUsuario();
             String Contraseña = miVentanaLogin.miDialogoRegistro.getContraseña();
-            miLogin.registrarLogin(usuario, Contraseña);
-            JOptionPane.showMessageDialog(null, "Usuario creado exitosamente", "Usuario creado", JOptionPane.INFORMATION_MESSAGE);
-            miVentanaLogin.miDialogoRegistro.cerrarDialogo();
+            boolean usuarioExistente = miLogin.verificarExistenciaUsuario(usuario);
+            if(usuarioExistente == true)
+            {
+                JOptionPane.showMessageDialog(null, "Ya existe un usuario con ese nombre!", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+            if(usuarioExistente == false)
+            {
+                miLogin.registrarLogin(usuario, Contraseña);
+                JOptionPane.showMessageDialog(null, "Usuario creado exitosamente", "Usuario creado", JOptionPane.INFORMATION_MESSAGE);
+                miVentanaLogin.miDialogoRegistro.cerrarDialogo();
+            }
         }
  
         if(comando.equals("crear"))
@@ -113,6 +120,7 @@ public class controlador implements ActionListener
                 miVentanaPrincipal.miDialogoTablaRestaurante.cerrarDialogo();
                 miVentanaPrincipal.miPanelResultado.mostrarResultado("\nPiensas ir a " + nombreSitio + "? Genial!");
                 miVentanaPrincipal.miDialogoTablaRestaurante.obtenerDatos();
+                Grupo grupo1 = new Grupo("Comida/Restaurantes", "Comer", nombreSitio + "1");
                 if(model1.getPresupuesto() < 50000)
                 {
                     miVentanaPrincipal.miPanelResultado.mostrarResultado("El presupuesto es menor a $50000.\nSi vas acompañado te sugerimos llevar mas dinero");
@@ -122,6 +130,7 @@ public class controlador implements ActionListener
             {
                 String nombreSitio = miVentanaPrincipal.miDialogoTablaExploracion.getTfnombreSitio();
                 miVentanaPrincipal.miDialogoTablaExploracion.cerrarDialogo();
+                Grupo grupo1 = new Grupo("Actividades y Aventuras", "Explorar", nombreSitio + " 1");
                 miVentanaPrincipal.miPanelResultado.mostrarResultado("Quieres ir a " + nombreSitio + "? Genial!");
                 miVentanaPrincipal.miPanelResultado.mostrarResultado("Si vas a una piscina, no olvides aplicarte bloqueador!");
                 miVentanaPrincipal.miDialogoTablaExploracion.obtenerDatos();
@@ -129,6 +138,7 @@ public class controlador implements ActionListener
             if(model1.getGusto() == "Turistear")
             {
                 String nombreSitio = miVentanaPrincipal.miDialogoTablaTurismo.getTfnombreSitio();
+                Grupo grupo1 = new Grupo("Sitios turisticos", "Turistear", nombreSitio + " 1");
                 miVentanaPrincipal.miPanelResultado.mostrarResultado("Quieres ir a " + nombreSitio + "? Excelente!");
                 miVentanaPrincipal.miDialogoTablaTurismo.cerrarDialogo();
                 miVentanaPrincipal.miDialogoTablaTurismo.obtenerDatos();

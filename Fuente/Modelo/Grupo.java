@@ -1,5 +1,3 @@
-import java.util.*;
-
 import javax.swing.JOptionPane;
 
 public class Grupo extends Evento
@@ -7,16 +5,25 @@ public class Grupo extends Evento
     private static int numPersonas;
     private String nomGrupo;
     private String gustos;
-    private String horaReunion;    
+    private static String horaReunion;    
     private String tipoActividad;
 
     public Grupo(String ptipoActividad, String pGustos, String pNomGrupo, String pHoraReunion)
     {
         super(numPersonas, pNomGrupo, pHoraReunion, ptipoActividad);
         this.gustos = pGustos;
-        this.horaReunion = pHoraReunion;
+        Grupo.horaReunion = pHoraReunion;
         this.nomGrupo = pNomGrupo;
         this.tipoActividad = ptipoActividad;
+    }
+
+    public Grupo(String ptipoActividad, String pGustos, String pNomGrupo)
+    {
+        super(numPersonas, pNomGrupo, horaReunion, pGustos);
+        this.gustos = pGustos;
+        this.nomGrupo = pNomGrupo;
+        this.tipoActividad = ptipoActividad;
+        
     }
 
     public String getHoraReunion() 
@@ -25,7 +32,7 @@ public class Grupo extends Evento
     }
     public void setHoraReunion(String horaReunion) 
     {
-        this.horaReunion = horaReunion;
+        Grupo.horaReunion = horaReunion;
     }
     public String getNomGrupo() 
     {

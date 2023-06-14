@@ -17,6 +17,13 @@ public class Cliente
         this.gusto = pGusto;
     }
 
+    public Cliente(String pnombreCliente, int pPresupuesto, String pGusto)
+    {
+        this.nombreCliente = pnombreCliente;
+        this.presupuesto = pPresupuesto;
+        this.gusto = pGusto;
+    }
+
     public int getPresupuesto()
     {
         return this.presupuesto;
@@ -70,7 +77,4 @@ public class Cliente
         long diasRestantes = ChronoUnit.DAYS.between(fechaActual, fechaSalida);
         return (int) diasRestantes;
     }
-
-
-
 }
