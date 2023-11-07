@@ -22,7 +22,7 @@ public class PanelEntradaDatos extends JPanel
         setLayout(null);
         setBackground(Color.decode("#42855B"));
 
-        iImagen = new ImageIcon("C:/Users/57316/Desktop/Programación/Proyecto_POO/TurismoLocal/Turismo.png");
+        iImagen = new ImageIcon("Turismo.png");
         lbImagen = new JLabel(iImagen);
         lbImagen.setBounds(10,10,200,200);
         add(lbImagen);

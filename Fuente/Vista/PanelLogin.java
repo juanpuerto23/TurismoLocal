@@ -17,7 +17,7 @@ public class PanelLogin extends JPanel
 
     public PanelLogin()
     {
-        iImagen = new ImageIcon("C:/Users/57316/Desktop/Programación/Proyecto_POO/TurismoLocal/Logo.png");
+        iImagen = new ImageIcon("Logo.png");
         lbImagen = new JLabel(iImagen);
         lbImagen.setBounds(285,10,150,74);
         add(lbImagen);
